@@ -1,15 +1,20 @@
+using EzySlice;
 using System;
 using System.Collections;
 using UnityEngine;
 
 public class WheatPatchView : MonoBehaviour
-{   
+{
     private const string Sickle = "Sickle";
 
     public Action OnAllCut;
 
     [SerializeField]
     private GameObject[] _growingState;
+    [SerializeField]
+    private Material _crossSectionMaterial;
+    [SerializeField]
+    private GameObject _readyWheat;
 
     private int _stateTimer = 2;  //seconds
     private int _growingStep = 1;
@@ -24,9 +29,9 @@ public class WheatPatchView : MonoBehaviour
         if (other.tag == "Sickle" && _growingStep == _growingState.Length)
         {
             StopAllCoroutines();
-            _growingStep = 1;
-            ShowWheatState(_growingStep);
-            OnAllCut?.Invoke();
+
+            Cut();
+           // OnAllCut?.Invoke();
         }
     }
 
@@ -79,9 +84,20 @@ public class WheatPatchView : MonoBehaviour
                 _growingState[3].SetActive(false);
                 _growingState[4].SetActive(true);
                 break;
-          
+
         }
-       StartCoroutine(NextGrowingState());
+        StartCoroutine(NextGrowingState());
+    }
+
+    private void Cut()
+    {
+        Slice(new Vector3(transform.position.x, transform.position.y +0.5f, transform.position.z - 0.5f), new Vector3(0, 1, 0), new TextureRegion());
+       // _growingState[4].SetActive(false);
+    }
+
+    public GameObject[] Slice(Vector3 planeWorldPosition, Vector3 planeWorldDirection, TextureRegion region)
+    {
+        return _readyWheat.SliceInstantiate(planeWorldPosition, planeWorldDirection, region, _crossSectionMaterial);
     }
 }
 

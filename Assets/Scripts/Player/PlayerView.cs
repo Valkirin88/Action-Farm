@@ -33,6 +33,7 @@ public class PlayerView : MonoBehaviour
     public void ShowSlash()
     {
         _animator.SetTrigger(Slash);
+
     }
 
     private void ShowOrHideSickle()
