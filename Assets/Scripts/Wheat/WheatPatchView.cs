@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class WheatPatchView : MonoBehaviour
-{
+{   
     private const string Sickle = "Sickle";
+
+    public Action OnAllCut;
 
     [SerializeField]
     private GameObject[] _growingState;
@@ -11,19 +14,20 @@ public class WheatPatchView : MonoBehaviour
     private int _stateTimer = 2;
     private int _growingStep = 1;
 
+    private void Start()
+    {
+        ShowWheatState(_growingStep);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Sickle" && _growingStep == _growingState.Length)
+        if (other.tag == "Sickle" && _growingStep == _growingState.Length)
         {
             StopAllCoroutines();
             _growingStep = 1;
             ShowWheatState(_growingStep);
+            OnAllCut?.Invoke();
         }
-    }
-
-    private void Start()
-    {
-        ShowWheatState(_growingStep);
     }
 
     private IEnumerator NextGrowingState()
