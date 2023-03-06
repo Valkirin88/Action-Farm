@@ -11,7 +11,7 @@ public class WheatPatchView : MonoBehaviour
     [SerializeField]
     private GameObject[] _growingState;
 
-    private int _stateTimer = 2;
+    private int _stateTimer = 2;  //seconds
     private int _growingStep = 1;
 
     private void Start()

@@ -1,8 +1,11 @@
 using UnityEngine;
+using System;
 
 public class PlayerView : MonoBehaviour
 {
     private const string Slash = "Slash";
+
+    public Action OnWheatCollected;
 
     [SerializeField]
     private GameObject _sickle;
@@ -17,6 +20,14 @@ public class PlayerView : MonoBehaviour
     private void Update()
     {
         ShowOrHideSickle();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.TryGetComponent<WheatCube>(out WheatCube cube))
+        {
+            OnWheatCollected?.Invoke();
+        }
     }
 
     public void ShowSlash()
