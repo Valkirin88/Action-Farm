@@ -1,10 +1,10 @@
 
-public class WheatCubeController 
+public class WheatController 
 {
     private WheatCubeView _cubeView;
     private WheatPatchView _patchView;
 
-    public WheatCubeController(WheatCubeView cubeView, WheatPatchView patchView)
+    public WheatController(WheatCubeView cubeView, WheatPatchView patchView)
     {
         _cubeView = cubeView;
         _patchView = patchView;

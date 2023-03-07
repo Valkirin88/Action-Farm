@@ -10,18 +10,15 @@ public class EntryPoint : MonoBehaviour
     
     private InputManager _inputManager;
     private PlayerController _playerController;
-    private WheatPatchController[] _wheatPatchController;
     private WheatPatchView[] _wheatPatchView;
-    private WheatCubeController[] _wheatCubeController;
+    private WheatController[] _wheatController;
     private WheatCubeView[] _wheatCubeView;
 
     void Awake()
     {
         _inputManager = new InputManager();
         _playerController = new PlayerController(_inputManager, _playerView);
-        WheatPatchControllerInitiate();
-        WheatCubeControllerInitiate();
-
+        WheatControllerInitiate();
     }
 
     void Update()
@@ -34,25 +31,16 @@ public class EntryPoint : MonoBehaviour
         _playerController.Dispose();
     }
 
-    private void WheatPatchControllerInitiate()
+    private void WheatControllerInitiate()
     {
-        _wheatPatchController = new WheatPatchController[_patches.Length];
-        _wheatPatchView = new WheatPatchView[_patches.Length];
-        for (int i = 0; i < _patches.Length; i++)
-        {
-            _wheatPatchView[i] = _patches[i].GetComponent<WheatPatchView>();
-            _wheatPatchController[i] = new WheatPatchController(_wheatPatchView[i]);
-        }
-    }
-
-    private void WheatCubeControllerInitiate()
-    {
-        _wheatCubeController = new WheatCubeController[_patches.Length];
+        _wheatController = new WheatController[_patches.Length];
         _wheatCubeView = new WheatCubeView[_patches.Length];
+        _wheatPatchView = new WheatPatchView[_patches.Length];
         for(int i =0; i < _patches.Length; i++)
         {
+            _wheatPatchView[i] = _patches[i].GetComponent<WheatPatchView>();
             _wheatCubeView[i] = _patches[i].GetComponent<WheatCubeView>();
-            _wheatCubeController[i] = new WheatCubeController(_wheatCubeView[i], _wheatPatchView[i]);
+            _wheatController[i] = new WheatController(_wheatCubeView[i], _wheatPatchView[i]);
         }
     }
 }
