@@ -26,7 +26,7 @@ public class EntryPoint : MonoBehaviour
 
     void Update()
     {
-        _inputManager.Update(); 
+
     }
 
     private void OnDestroy()

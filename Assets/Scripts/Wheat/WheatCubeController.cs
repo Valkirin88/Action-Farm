@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class WheatCubeController 
 {
@@ -13,6 +9,12 @@ public class WheatCubeController
         _cubeView = cubeView;
         _patchView = patchView;
         _patchView.OnAllCut = CreateCube;
+        _cubeView.OnCubeCollect = CubeCollect;
+    }
+
+    private void CubeCollect()
+    {
+        _patchView.StartGrowing();
     }
 
     private void CreateCube()

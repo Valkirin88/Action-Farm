@@ -11,17 +11,12 @@ public class PlayerController
     {
         _view = view;
         _inputManager = inputManager;
-        _inputManager.OnSlash += ShowSlash;
-    }
-
-    private void ShowSlash()
-    {
-        _view.ShowSlash();
+       
     }
 
     public void Dispose()
     {
-        _inputManager.OnSlash -= ShowSlash;
+       
     }
 
 }

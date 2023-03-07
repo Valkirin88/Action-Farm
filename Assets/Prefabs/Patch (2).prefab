@@ -60,7 +60,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256066637591193931}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.832, y: 0.027, z: -4.5199995}
   m_LocalScale: {x: 0.5, y: 0.056709, z: 0.5}
   m_Children:
@@ -139,7 +139,7 @@ MonoBehaviour:
   - {fileID: 1256066638452734926}
   - {fileID: 1256066636738065032}
   - {fileID: 1256066638781330807}
-  _crossSectionMaterial: {fileID: 2100000, guid: c7f27a2d73289b249b599c8deafe04eb, type: 2}
+  _crossSectionMaterial: {fileID: 2100000, guid: 85ebd50e9333ef34fac0a9566856c851, type: 2}
   _readyWheat: {fileID: 4250389402769396774}
 --- !u!54 &2302842319046941539
 Rigidbody:
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000195e72f27676418c2c55a827df74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cube: {fileID: 5374804781546134143, guid: 0466fe978306e2b42a7d3149cd234b9d, type: 3}
+  _cubePrefab: {fileID: 5374804781546134143, guid: 0466fe978306e2b42a7d3149cd234b9d, type: 3}
 --- !u!1 &1256066637989466110
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections;
 
 public class PlayerView : MonoBehaviour
 {
@@ -15,11 +16,12 @@ public class PlayerView : MonoBehaviour
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        ShowSlash();
     }
 
     private void Update()
     {
-        ShowOrHideSickle();
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,19 +32,29 @@ public class PlayerView : MonoBehaviour
         }
     }
 
-    public void ShowSlash()
+    private void ShowSlash()
     {
         _animator.SetTrigger(Slash);
-
+        ShowSickle();
+        StartCoroutine(WaitNextSlash());
+        
     }
 
-    private void ShowOrHideSickle()
+    private IEnumerator WaitNextSlash()
     {
-        if (_animator.GetCurrentAnimatorStateInfo(0).IsName(Slash))
-        {
-            _sickle.SetActive(true);
-        }
-        else
-            _sickle.SetActive(false);
+        yield return new WaitForSeconds(2);
+        ShowSlash();
+    }
+
+    private void ShowSickle()
+    {
+        _sickle.SetActive(true);
+        StartCoroutine(HideSickle());
+    }
+
+    private IEnumerator HideSickle()
+    {
+        yield return new WaitForSeconds(0.5f);
+        _sickle.SetActive(false);
     }
 }
