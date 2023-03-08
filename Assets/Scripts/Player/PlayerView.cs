@@ -14,7 +14,7 @@ public class PlayerView : MonoBehaviour
     [SerializeField]
     private GameObject _sickle;
 
-    [SerializeField]
+
     private Animator _animator;
     private Vector2 _direction;
    
@@ -22,7 +22,7 @@ public class PlayerView : MonoBehaviour
 
     private void Start()
     {
-       // _animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
         _animator.SetBool("Idle", _isIdle);
     }
 
@@ -56,20 +56,22 @@ public class PlayerView : MonoBehaviour
         _animator.SetBool("Idle", _isIdle);
         _animator.SetFloat("Velocity X", _direction.x);
         _animator.SetFloat("Velocity Z", _direction.y);
+        HideSickle();
     }
 
     public void Idle(bool isIdle)
     {
         _isIdle = isIdle;
         _animator.SetBool("Idle", _isIdle);
-        _animator.SetFloat("Velocity X", _direction.x);
-        _animator.SetFloat("Velocity Z", _direction.y);
+        //_animator.SetFloat("Velocity X", _direction.x);
+        //_animator.SetFloat("Velocity Z", _direction.y);
+        HideSickle();
     }
 
     private void ShowSlash()
     {
         _animator.SetTrigger(Slash);
-        ShowSickle();
+     
        // StartCoroutine(WaitNextSlash());
     }
 
@@ -82,12 +84,17 @@ public class PlayerView : MonoBehaviour
     private void ShowSickle()
     {
         _sickle.SetActive(true);
-        StartCoroutine(HideSickle());
     }
 
-    private IEnumerator HideSickle()
+    private void HideSickle()
     {
-        yield return new WaitForSeconds(1f);
+        Debug.Log("Hide");
         _sickle.SetActive(false);
     }
+
+    //private IEnumerator HideSickle()
+    //{
+    //    yield return new WaitForSeconds(1f);
+    //    _sickle.SetActive(false);
+    //}
 }

@@ -39,7 +39,7 @@ ModelImporter:
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 61
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: -90
       level: 0
@@ -83,7 +83,21 @@ ModelImporter:
           preInfinity: 3
           postInfinity: 3
           rotationOrder: 4
-      events: []
+      events:
+      - time: 0.018893393
+        functionName: ShowSickle
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 59ba96f72a7375140851ee194f65568c, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.97840756
+        functionName: HideSickle
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 59ba96f72a7375140851ee194f65568c, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
