@@ -29,7 +29,6 @@ public class PlayerView : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(_isIdle);
         if (!_isIdle)
         transform.position = transform.position + new Vector3(_direction.x, 0, _direction.y) * Time.deltaTime * _acceleration;
     }

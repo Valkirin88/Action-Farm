@@ -22,8 +22,9 @@ public class SimpleTouchController : MonoBehaviour {
 		get { return movementVector;}
 	}
 
+    
 
-	public void BeginDrag()
+    public void BeginDrag()
 	{
 		touchPresent = true;
 		if(TouchStateEvent != null)

@@ -10,6 +10,9 @@ public class EntryPoint : MonoBehaviour
 
     [SerializeField]
     private GameObject[] _patches;
+
+    [SerializeField]
+    private GameObject _touchControllerObject;
     
     private InputManager _inputManager;
     private PlayerController _playerController;
@@ -19,14 +22,14 @@ public class EntryPoint : MonoBehaviour
 
     void Awake()
     {
-        _inputManager = new InputManager();
+        _inputManager = new InputManager(_touchControllerObject);
         _playerController = new PlayerController(_inputManager, _playerView, _touchController);
         WheatControllerInitiate();
     }
 
     void Update()
     {
-
+        _inputManager.Update();
     }
 
     private void OnDestroy()
