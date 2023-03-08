@@ -63,8 +63,6 @@ public class PlayerView : MonoBehaviour
     {
         _isIdle = isIdle;
         _animator.SetBool("Idle", _isIdle);
-        //_animator.SetFloat("Velocity X", _direction.x);
-        //_animator.SetFloat("Velocity Z", _direction.y);
         HideSickle();
     }
 
