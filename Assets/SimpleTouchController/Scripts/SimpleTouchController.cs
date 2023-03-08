@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
 
 
 public class SimpleTouchController : MonoBehaviour {
@@ -49,13 +47,15 @@ public class SimpleTouchController : MonoBehaviour {
 			// convert the value between 1 0 to -1 +1
 			movementVector.x = ((1 - value.x) - 0.5f) * 2f;
 			movementVector.y = ((1 - value.y) - 0.5f) * 2f;
+			
 
-			if(TouchEvent != null)
-			{
-				TouchEvent(movementVector);
-			}
-		}
+            if (TouchEvent != null)
+            {
 
+                TouchEvent(movementVector);
+            }
+        }
+		
 	}
 
 }

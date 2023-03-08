@@ -3,6 +3,9 @@ using UnityEngine;
 public class EntryPoint : MonoBehaviour
 {
     [SerializeField]
+    private SimpleTouchController _touchController;
+
+    [SerializeField]
     private PlayerView _playerView;
 
     [SerializeField]
@@ -17,7 +20,7 @@ public class EntryPoint : MonoBehaviour
     void Awake()
     {
         _inputManager = new InputManager();
-        _playerController = new PlayerController(_inputManager, _playerView);
+        _playerController = new PlayerController(_inputManager, _playerView, _touchController);
         WheatControllerInitiate();
     }
 

@@ -278,6 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30fc4354e378b9b469efee0aa69c1a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _touchController: {fileID: 1255477185}
   _playerView: {fileID: 72772134}
   _patches:
   - {fileID: 330949078}
@@ -975,6 +976,17 @@ RectTransform:
   m_AnchoredPosition: {x: -267.81494, y: -80.00705}
   m_SizeDelta: {x: 157.8459, y: 114.502}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1255477185 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114000010198964430, guid: c3f341c6e5b047e4e8e77a7f098cbbcf, type: 3}
+  m_PrefabInstance: {fileID: 941817297}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cea777969ee18141abd53ba5e64a25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1298873452
 PrefabInstance:
   m_ObjectHideFlags: 0
