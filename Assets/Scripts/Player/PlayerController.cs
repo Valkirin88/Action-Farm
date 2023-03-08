@@ -20,9 +20,7 @@ public class PlayerController
 
     private void StopMoving(bool touchPresent)
     {
-       Debug.Log(touchPresent);
         _view.Idle(!touchPresent);
-   
     }
 
     private void PlayerMove(Vector2 vector2)

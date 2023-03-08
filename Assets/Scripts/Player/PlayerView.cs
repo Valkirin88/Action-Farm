@@ -14,16 +14,15 @@ public class PlayerView : MonoBehaviour
     [SerializeField]
     private GameObject _sickle;
 
+    [SerializeField]
     private Animator _animator;
     private Vector2 _direction;
    
-   
-
-    private bool _isIdle = true;
+    private bool _isIdle = true; 
 
     private void Start()
     {
-        _animator = GetComponent<Animator>();
+       // _animator = GetComponent<Animator>();
         _animator.SetBool("Idle", _isIdle);
     }
 
@@ -39,11 +38,20 @@ public class PlayerView : MonoBehaviour
         {
             OnWheatCollected?.Invoke();
         }
+
+        if (other.GetComponent<WheatZone>() != null)
+        {
+            Debug.Log("Slash");
+            ShowSlash();
+        }
+        else
+            Idle(_isIdle);
     }
 
     public void Move(Vector2 direction)
     {
         _direction = direction;
+        _direction.Normalize();
         _isIdle = false;
         _animator.SetBool("Idle", _isIdle);
         _animator.SetFloat("Velocity X", _direction.x);
@@ -60,10 +68,9 @@ public class PlayerView : MonoBehaviour
 
     private void ShowSlash()
     {
-        //_animator.SetTrigger(Slash);
-        //ShowSickle();
-        //StartCoroutine(WaitNextSlash());
-        
+        _animator.SetTrigger(Slash);
+        ShowSickle();
+       // StartCoroutine(WaitNextSlash());
     }
 
     private IEnumerator WaitNextSlash()
@@ -80,7 +87,7 @@ public class PlayerView : MonoBehaviour
 
     private IEnumerator HideSickle()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         _sickle.SetActive(false);
     }
 }
