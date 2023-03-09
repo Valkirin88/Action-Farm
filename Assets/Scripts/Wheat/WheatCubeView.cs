@@ -12,7 +12,7 @@ public class WheatCubeView : MonoBehaviour
     private GameObject _cubeOnScene;
     private Transform _playerTransform;
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (_cubeOnScene != null && other.GetComponent<PlayerView>())
         {

@@ -36,6 +36,7 @@ public class PlayerView : MonoBehaviour
         if(other.TryGetComponent<WheatCube>(out WheatCube cube))
         {
             OnWheatCollected?.Invoke();
+            cube.GetComponent<Collider>().enabled = false;
         }
     }
 
@@ -49,6 +50,7 @@ public class PlayerView : MonoBehaviour
 
     public void Move(Vector2 direction)
     {
+        _animator.ResetTrigger(Slash);
         _direction = direction;
         _direction.Normalize();
         _animator.SetBool("Idle", false);

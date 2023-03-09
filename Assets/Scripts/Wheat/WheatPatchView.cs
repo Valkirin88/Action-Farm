@@ -32,6 +32,7 @@ public class WheatPatchView : MonoBehaviour
 
     public void StartGrowing()
     {
+        StopAllCoroutines();
         _growingStep = 1;
         ShowWheatState(_growingStep);
     }
