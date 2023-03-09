@@ -1,6 +1,5 @@
 using UnityEngine;
 using System;
-using System.Collections;
 
 public class PlayerView : MonoBehaviour
 {
@@ -44,7 +43,6 @@ public class PlayerView : MonoBehaviour
     {
         if (other.GetComponent<WheatZone>() != null)
         {
-            Debug.Log("Slash");
             ShowSlash();
         }
     }
@@ -78,7 +76,6 @@ public class PlayerView : MonoBehaviour
 
     private void HideSickle()
     {
-        Debug.Log("Hide");
         _sickle.SetActive(false);
     }
 }
