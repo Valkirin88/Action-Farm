@@ -31,7 +31,8 @@ public class PlayerController
 
     public void Dispose()
     {
-       
+        _touchController.TouchEvent -= PlayerMove;
+        _touchController.TouchStateEvent -= StopMoving;
     }
 
 }

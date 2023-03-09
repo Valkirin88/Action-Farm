@@ -84,14 +84,14 @@ ModelImporter:
           postInfinity: 3
           rotationOrder: 4
       events:
-      - time: 0.0067476435
+      - time: 0.4329956
         functionName: ShowSickle
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 59ba96f72a7375140851ee194f65568c, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.99055326
+      - time: 0.83991224
         functionName: HideSickle
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 59ba96f72a7375140851ee194f65568c, type: 3}

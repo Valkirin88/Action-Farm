@@ -38,22 +38,22 @@ public class PlayerView : MonoBehaviour
         {
             OnWheatCollected?.Invoke();
         }
+    }
 
+    private void OnTriggerStay(Collider other)
+    {
         if (other.GetComponent<WheatZone>() != null)
         {
             Debug.Log("Slash");
             ShowSlash();
         }
-        else
-            Idle(_isIdle);
     }
 
     public void Move(Vector2 direction)
     {
         _direction = direction;
         _direction.Normalize();
-        _isIdle = false;
-        _animator.SetBool("Idle", _isIdle);
+        _animator.SetBool("Idle", false);
         _animator.SetFloat("Velocity X", _direction.x);
         _animator.SetFloat("Velocity Z", _direction.y);
         HideSickle();
@@ -69,14 +69,6 @@ public class PlayerView : MonoBehaviour
     private void ShowSlash()
     {
         _animator.SetTrigger(Slash);
-     
-       // StartCoroutine(WaitNextSlash());
-    }
-
-    private IEnumerator WaitNextSlash()
-    {
-        yield return new WaitForSeconds(2);
-        ShowSlash();
     }
 
     private void ShowSickle()
@@ -89,10 +81,4 @@ public class PlayerView : MonoBehaviour
         Debug.Log("Hide");
         _sickle.SetActive(false);
     }
-
-    //private IEnumerator HideSickle()
-    //{
-    //    yield return new WaitForSeconds(1f);
-    //    _sickle.SetActive(false);
-    //}
 }
