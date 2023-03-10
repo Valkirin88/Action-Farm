@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1720936529143370069}
   - component: {fileID: 4284752766039127791}
   - component: {fileID: 2344100455379657950}
-  - component: {fileID: 2155577634363800195}
+  - component: {fileID: -8439383059441598694}
   m_Layer: 0
   m_Name: WheatCube
   m_TagString: Untagged
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2155577634363800195
+--- !u!114 &-8439383059441598694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,6 +105,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5374804781546134143}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d838d88ab1f033b43b1520b890d7a305, type: 3}
+  m_Script: {fileID: 11500000, guid: 000195e72f27676418c2c55a827df74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cubePrefab: {fileID: 0}

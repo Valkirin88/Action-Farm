@@ -17,6 +17,8 @@ public class WheatPatchView : MonoBehaviour
     private Material _crossSectionMaterial;
     [SerializeField]
     private GameObject _readyWheat;
+    [SerializeField]
+    private GameObject _cubePrefab;
 
     private int _stateTimer = 2;  //seconds
     private int _growingStep = 1;
@@ -24,6 +26,9 @@ public class WheatPatchView : MonoBehaviour
     private bool _isReadyToBeCut = true;
 
     private GameObject[] _slicedObject;
+    private GameObject _cubeOnScene;
+
+    public GameObject CubeOnScene  => _cubeOnScene; 
 
     private void Start()
     {
@@ -149,6 +154,11 @@ public class WheatPatchView : MonoBehaviour
         yield return new WaitForSeconds(1);
         Cut(_cuttingStep = 0);
         OnAllCut?.Invoke();
+    }
+
+    public void CreateCube()
+    {
+        _cubeOnScene = Instantiate(_cubePrefab, new Vector3(transform.position.x, transform.position.y + 0.18f, transform.position.z), Quaternion.identity);
     }
 }
 

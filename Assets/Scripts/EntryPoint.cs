@@ -8,8 +8,12 @@ public class EntryPoint : MonoBehaviour
     [SerializeField]
     private PlayerView _playerView;
 
+    //[SerializeField]
+    //private GameObject _wheatZone;
+
     [SerializeField]
     private GameObject[] _patches;
+
 
     [SerializeField]
     private GameObject _touchControllerObject;
@@ -18,12 +22,13 @@ public class EntryPoint : MonoBehaviour
     private PlayerController _playerController;
     private WheatPatchView[] _wheatPatchView;
     private WheatController[] _wheatController;
-    private WheatCubeView[] _wheatCubeView;
+
 
     void Awake()
     {
         _inputManager = new InputManager(_touchControllerObject);
         _playerController = new PlayerController(_inputManager, _playerView, _touchController);
+       
         WheatControllerInitiate();
     }
 
@@ -40,13 +45,13 @@ public class EntryPoint : MonoBehaviour
     private void WheatControllerInitiate()
     {
         _wheatController = new WheatController[_patches.Length];
-        _wheatCubeView = new WheatCubeView[_patches.Length];
+     
         _wheatPatchView = new WheatPatchView[_patches.Length];
         for(int i =0; i < _patches.Length; i++)
         {
             _wheatPatchView[i] = _patches[i].GetComponent<WheatPatchView>();
-            _wheatCubeView[i] = _patches[i].GetComponent<WheatCubeView>();
-            _wheatController[i] = new WheatController(_wheatCubeView[i], _wheatPatchView[i]);
+           
+            _wheatController[i] = new WheatController(_wheatPatchView[i], _playerView);
         }
     }
 }

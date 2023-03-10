@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 1256066637591193930}
   - component: {fileID: 2302842319046941539}
   - component: {fileID: 2302842319046941542}
-  - component: {fileID: 5420150365565972823}
   m_Layer: 0
   m_Name: Patch (2)
   m_TagString: Untagged
@@ -141,6 +140,7 @@ MonoBehaviour:
   - {fileID: 1256066638781330807}
   _crossSectionMaterial: {fileID: 2100000, guid: 85ebd50e9333ef34fac0a9566856c851, type: 2}
   _readyWheat: {fileID: 4250389402769396774}
+  _cubePrefab: {fileID: 5374804781546134143, guid: 0466fe978306e2b42a7d3149cd234b9d, type: 3}
 --- !u!54 &2302842319046941539
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -168,21 +168,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.49, y: 23.16, z: 0.5}
-  m_Center: {x: 0, y: 12.26, z: 0}
---- !u!114 &5420150365565972823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256066637591193931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 000195e72f27676418c2c55a827df74e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cubePrefab: {fileID: 5374804781546134143, guid: 0466fe978306e2b42a7d3149cd234b9d, type: 3}
+  m_Size: {x: 1.1, y: 15.64, z: 1.1}
+  m_Center: {x: 0, y: 8.9, z: 0}
 --- !u!1 &1256066637989466110
 GameObject:
   m_ObjectHideFlags: 0

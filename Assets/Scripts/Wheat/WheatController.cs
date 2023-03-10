@@ -3,13 +3,16 @@ public class WheatController
 {
     private WheatCubeView _cubeView;
     private WheatPatchView _patchView;
-
-    public WheatController(WheatCubeView cubeView, WheatPatchView patchView)
+    private PlayerView _playerView;
+    
+    public WheatController(WheatPatchView patchView, PlayerView playerView)
     {
-        _cubeView = cubeView;
+        _playerView = playerView;
         _patchView = patchView;
+
+        _playerView.OnWheatCollected += CubeCollect;
+        _playerView.OnWheatCollected += ShowCollectAnimation;
         _patchView.OnAllCut = CreateCube;
-        _cubeView.OnCubeCollect = CubeCollect;
     }
 
     private void CubeCollect()
@@ -19,6 +22,12 @@ public class WheatController
 
     private void CreateCube()
     {
-        _cubeView.CreateCube();
+       _patchView.CreateCube();
+       _cubeView = _patchView.CubeOnScene.GetComponent<WheatCubeView>();
+    }
+
+    private void ShowCollectAnimation()
+    {
+        _cubeView.ShowCollectAnimation();
     }
 }

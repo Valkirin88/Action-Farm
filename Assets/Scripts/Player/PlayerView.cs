@@ -13,9 +13,10 @@ public class PlayerView : MonoBehaviour
     [SerializeField]
     private GameObject _sickle;
 
-
     private Animator _animator;
     private Vector2 _direction;
+
+    private int _wheatCount;
    
     private bool _isIdle = true; 
 
@@ -33,16 +34,16 @@ public class PlayerView : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent<WheatCube>(out WheatCube cube))
+        if(other.GetComponent<WheatCubeView>() && _wheatCount<40)
         {
             OnWheatCollected?.Invoke();
-            cube.GetComponent<Collider>().enabled = false;
+            other.GetComponent<Collider>().enabled = false;
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<WheatZone>() != null)
+        if (other.GetComponent<WheatPatchView>() != null)
         {
             ShowSlash();
         }
