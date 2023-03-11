@@ -13,43 +13,44 @@ public class WheatController
         _playerView = playerView;
         _patchView = patchView;
         _wheatBag = wheatBag;
-        _playerView.OnWheatCollected += CubeCollect;
-        _playerView.OnWheatCollected += ShowCollectAnimation;
-        _playerView.OnWheatUnloaded += UnloadWheat;
+    
+        _playerView.OnNearBarn += UnloadWheat;
         _patchView.OnAllCut += CreateCube;
     }
 
     private void CubeCollect()
     {
+        _cubeView.OnCubeCollect -= CubeCollect;
         _patchView.StartGrowing();
+        ShowCollectAnimation();
     }
 
     private void CreateCube()
     {
        _patchView.CreateCube();
        _cubeView = _patchView.CubeOnScene.GetComponent<WheatCubeView>();
-       
+        _cubeView.OnCubeCollect += CubeCollect;    
+          
     }
 
     private void ShowCollectAnimation()
     {
         _cubeView.ShowCollectAnimation();
-        //_cubeView._OnAnimationDone += AddInBag;
-        _wheatBag.AddInBag();
-
+        _cubeView.OnAnimationDone += AddInBag;
+        _cubeView.OnAnimationDone += _playerView.AddWheat;
     }
 
     private void AddInBag()
     {
+        _cubeView.OnAnimationDone -= _playerView.AddWheat;
+        _cubeView.OnAnimationDone -= AddInBag;
         _wheatBag.AddInBag();
-
+        
+        
     }
 
     private void UnloadWheat()
     {
         _wheatBag.UnloadWheat();
     }
-
-    
-
 }

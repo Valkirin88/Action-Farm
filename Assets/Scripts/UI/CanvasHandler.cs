@@ -20,8 +20,7 @@ public class CanvasHandler : MonoBehaviour
 
     private void Start()
     {
-        _playerView.OnWheatCollected += AddWheat;
-        _wheat = _playerView.WheatCount;
+        _playerView.OnWheatCountChanged += AddWheat;
     }
 
     void Update()
@@ -35,8 +34,8 @@ public class CanvasHandler : MonoBehaviour
         _wheatCounterText.text = "X" + _wheat;
     }
 
-    private void AddWheat()
+    private void AddWheat(int wheat)
     {
-        _wheat = _playerView.WheatCount;
+        _wheat = wheat;
     }
 }

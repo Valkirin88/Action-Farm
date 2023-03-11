@@ -5,8 +5,8 @@ public class PlayerView : MonoBehaviour
 {
     private const string Slash = "Slash";
 
-    public Action OnWheatCollected;
-    public Action OnWheatUnloaded;
+    public Action OnNearBarn;
+    public Action<int> OnWheatCountChanged;
     
     [SerializeField]
     private float _acceleration  = 2;
@@ -21,8 +21,7 @@ public class PlayerView : MonoBehaviour
    
     private bool _isIdle = true;
 
-    public int WheatCount  => _wheatCount; 
-
+   
     private void Start()
     {
         _animator = GetComponent<Animator>();
@@ -40,15 +39,11 @@ public class PlayerView : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<WheatCubeView>() && _wheatCount < 40)
-        {
-            _wheatCount++;
-            OnWheatCollected?.Invoke();
-            other.GetComponent<Collider>().enabled = false;
-        }
+      
         if(other.GetComponent<Barn_house>() && _wheatCount > 0)
         {
-            OnWheatUnloaded?.Invoke();
+            OnNearBarn?.Invoke();
+            SellWheat();
         }
     }
 
@@ -90,5 +85,17 @@ public class PlayerView : MonoBehaviour
     private void HideSickle()
     {
         _sickle.SetActive(false);
+    }
+
+    public void AddWheat()
+    {
+        _wheatCount++;
+        OnWheatCountChanged?.Invoke(_wheatCount);
+    }
+
+    private void SellWheat()
+    {
+        _wheatCount = 0;
+        OnWheatCountChanged?.Invoke(_wheatCount);
     }
 }

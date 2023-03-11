@@ -11,6 +11,9 @@ public class WheatBag : MonoBehaviour
     private int _wheatCount = 0;
     private GameObject[] _loadedCube;
     private GameObject[] _unloadedCube;
+    private float _cubeMoveTime = 0.2f;
+    private float _timerForNextCubeUplad;
+    
     
 
     private void Start()
@@ -25,6 +28,11 @@ public class WheatBag : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        _timerForNextCubeUplad += Time.deltaTime;
+    }
+
     public void AddInBag()
     {
         _wheatCubes[_wheatCount].gameObject.SetActive(true);
@@ -35,18 +43,23 @@ public class WheatBag : MonoBehaviour
     {
         
         _unloadedCube = new GameObject[_wheatCount];
-       
-        for (int i = _wheatCount; i > 0; i--)
-        {
-            _unloadedCube[i] = Instantiate(_loadedCube[i], _loadedCube[i].transform.position, Quaternion.identity);
-            _loadedCube[i].SetActive(false);
-          //  ShowUnloadAnimation(_unloadedCube[i]);
-        }
+        ShowUnloadAnimation();
     }
 
-    private void ShowUnloadAnimation(GameObject cube)
+    private void ShowUnloadAnimation()
     {
-        cube.transform.DOMove(_barnHouse.transform.position, 0.2f);
+        
+        var index = _wheatCount-1;
+        
+        if (index >= 0 && _timerForNextCubeUplad >_cubeMoveTime)
+        {
+            _timerForNextCubeUplad = 0;
+            _unloadedCube[index] = Instantiate(_wheatCubes[index].gameObject, _wheatCubes[index].gameObject.transform.position, Quaternion.identity);
+            _wheatCubes[index].gameObject.SetActive(false);
+            _wheatCount--;
+            _unloadedCube[index].transform.DOMove(_barnHouse.transform.position, _cubeMoveTime).onComplete = ShowUnloadAnimation;
+            Destroy(_unloadedCube[index], _cubeMoveTime);
+        }
     }
 }
    
