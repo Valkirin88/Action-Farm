@@ -6,6 +6,11 @@ using System.Collections;
 public class CanvasHandler : MonoBehaviour
 {
     [SerializeField]
+    private GameObject _wheatWindow;
+    [SerializeField]
+    private GameObject _coinsWindow;
+
+    [SerializeField]
     private TextMeshProUGUI _coinsCounterText;
     [SerializeField]
     private TextMeshProUGUI _wheatCounterText;
@@ -41,8 +46,11 @@ public class CanvasHandler : MonoBehaviour
 
     private void WheatCountdown()
     {
-        if(_wheat > 0)
-        StartCoroutine(WaitForNextCount());
+        if (_wheat > 0)
+        {
+            _wheatWindow.transform.DOShakePosition(0.2f, 10);
+            StartCoroutine(WaitForNextCount());
+        }
     }
 
     private IEnumerator WaitForNextCount()
