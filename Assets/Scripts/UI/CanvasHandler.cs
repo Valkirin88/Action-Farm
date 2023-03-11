@@ -1,10 +1,10 @@
-using System;
 using TMPro;
 using UnityEngine;
+using DG.Tweening;
+using System.Collections;
 
 public class CanvasHandler : MonoBehaviour
 {
-
     [SerializeField]
     private TextMeshProUGUI _coinsCounterText;
     [SerializeField]
@@ -17,25 +17,39 @@ public class CanvasHandler : MonoBehaviour
 
     [SerializeField]
     private PlayerView _playerView;
+    [SerializeField]
+    private float _countdownTime = 0.2f;
 
     private void Start()
     {
         _playerView.OnWheatCountChanged += AddWheat;
+        _playerView.OnNearBarn += WheatCountdown;
+        ShowResources(0,0);
     }
 
-    void Update()
+       private void ShowResources(int coins, int wheat)
     {
-        ShowResources();
-    }
-
-    private void ShowResources()
-    {
-        _coinsCounterText.text = "X" + _coins;
-        _wheatCounterText.text = "X" + _wheat;
+        _coinsCounterText.text = "x" + coins;
+        _wheatCounterText.text = "x" + wheat;
     }
 
     private void AddWheat(int wheat)
     {
         _wheat = wheat;
+        _wheatCounterText.text = "x" + _wheat;
+    }
+
+    private void WheatCountdown()
+    {
+        if(_wheat > 0)
+        StartCoroutine(WaitForNextCount());
+    }
+
+    private IEnumerator WaitForNextCount()
+    {
+        yield return new WaitForSeconds(_countdownTime);
+        _wheat--;
+        ShowResources(_coins, _wheat);
+        WheatCountdown();
     }
 }

@@ -43,7 +43,7 @@ public class PlayerView : MonoBehaviour
         if(other.GetComponent<Barn_house>() && _wheatCount > 0)
         {
             OnNearBarn?.Invoke();
-            SellWheat();
+            _wheatCount = 0;
         }
     }
 
@@ -93,9 +93,4 @@ public class PlayerView : MonoBehaviour
         OnWheatCountChanged?.Invoke(_wheatCount);
     }
 
-    private void SellWheat()
-    {
-        _wheatCount = 0;
-        OnWheatCountChanged?.Invoke(_wheatCount);
-    }
 }
