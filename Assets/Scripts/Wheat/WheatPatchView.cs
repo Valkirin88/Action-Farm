@@ -143,7 +143,6 @@ public class WheatPatchView : MonoBehaviour
         return _readyWheat.SliceInstantiate(planeWorldPosition, planeWorldDirection, region, _crossSectionMaterial);
     }
 
-
     private void ShowCutAnim(GameObject part)
     {
         part.transform.DOLocalRotate(new Vector3(0,0,90), 1, RotateMode.WorldAxisAdd);

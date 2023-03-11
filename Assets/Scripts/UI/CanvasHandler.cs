@@ -23,19 +23,24 @@ public class CanvasHandler : MonoBehaviour
     [SerializeField]
     private PlayerView _playerView;
     [SerializeField]
-    private float _countdownTime = 0.01f;
+    private CoinsHandler _coinsHandler;
+    [SerializeField]
+    private float _countdownTime = 0.1f;
+
+    private int _coinsOnCounter;
 
     private void Start()
     {
         _playerView.OnWheatCountChanged += AddWheat;
         _playerView.OnNearBarn += WheatCountdown;
+        _coinsHandler.OnCoinGet += CoinsCountStart;
         ShowResources(0,0);
     }
 
-       private void ShowResources(int coins, int wheat)
+    private void ShowResources(int coins, int wheat)
     {
-        _coinsCounterText.text = "x" + coins;
-        _wheatCounterText.text = "x" + wheat;
+        _coinsCounterText.text =  $"{coins}";
+        _wheatCounterText.text =  $"{wheat}";
     }
 
     private void AddWheat(int wheat)
@@ -48,16 +53,41 @@ public class CanvasHandler : MonoBehaviour
     {
         if (_wheat > 0)
         {
-            _wheatWindow.transform.DOShakePosition(0.2f, 10);
-            StartCoroutine(WaitForNextCount());
+            _wheatWindow.transform.DOShakePosition(0.1f, 10);
+            StartCoroutine(WaitForNextWheatCount());
         }
     }
 
-    private IEnumerator WaitForNextCount()
+    private IEnumerator WaitForNextWheatCount()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(_countdownTime);
         _wheat--;
         ShowResources(_coins, _wheat);
         WheatCountdown();
+    }
+
+    private void CoinsCountStart(int coinsCount)
+    {
+        StopAllCoroutines();
+        _coins = _coins + coinsCount;
+        CoinsCountUp();
+        Debug.Log(_coins);
+    }
+
+    private void CoinsCountUp()
+    {
+        if (_coinsOnCounter < _coins)
+        {
+            _coinsWindow.transform.DOShakePosition(0.05f, 10);
+            StartCoroutine(WaitForNextCoinCount());
+        }
+    }
+
+    private IEnumerator WaitForNextCoinCount()
+    {
+        yield return new WaitForSeconds(0.05f);
+        _coinsOnCounter++;
+        ShowResources(_coinsOnCounter, 0);
+        CoinsCountUp();
     }
 }

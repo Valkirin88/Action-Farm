@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PlayerController 
@@ -27,7 +26,6 @@ public class PlayerController
     {
         _view.Move(vector2);
     }
-
 
     public void Dispose()
     {

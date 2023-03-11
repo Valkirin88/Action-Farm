@@ -17,8 +17,6 @@ public class WheatBag : MonoBehaviour
     private float _timerForNextCubeUplad;
     private int _index;
     private bool _isUnload;
-    
-    
 
     private void Start()
     {
@@ -59,11 +57,8 @@ public class WheatBag : MonoBehaviour
     {
         _index = _wheatCount - 1;
 
-
         if (_index >= 0)
         {
-            Debug.Log(_wheatCount);
-
             _unloadedCube[_index] = Instantiate(_wheatCubes[_index].gameObject, _wheatCubes[_index].gameObject.transform.position, Quaternion.identity);
             _wheatCubes[_index].gameObject.SetActive(false);
             _wheatCount--;
@@ -73,7 +68,6 @@ public class WheatBag : MonoBehaviour
         }
         if(_index == 0)
             _isUnload = false;
-
     }
 
     private void DestroyCube(GameObject cube, int wheatCount)

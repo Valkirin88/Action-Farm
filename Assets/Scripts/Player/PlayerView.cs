@@ -33,20 +33,11 @@ public class PlayerView : MonoBehaviour
     {
         if (!_isIdle)
         {
+            HideSickle();
             _animator.ResetTrigger(Slash);
             transform.position = transform.position + new Vector3(_direction.x, 0, _direction.y) * Time.deltaTime * _acceleration;
         }
     }
-
-    //private void OnTriggerStay(Collider other)
-    //{
-      
-    //    if(other.GetComponent<Barn_house>() && WheatCount > 0)
-    //    {
-    //        OnNearBarn?.Invoke();
-    //        _wheatCount = 0;
-    //    }
-    //}
 
     private void OnTriggerStay(Collider other)
     {
@@ -54,7 +45,7 @@ public class PlayerView : MonoBehaviour
         {
             ShowSlash();
         }
-        if (other.GetComponent<Barn_house>() && WheatCount > 0)
+        if (other.GetComponent<CoinsHandler>() && WheatCount > 0)
         {
             OnNearBarn?.Invoke();
             _wheatCount = 0;
