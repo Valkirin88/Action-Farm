@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 using DG.Tweening;
 
 public class WheatCubeView : MonoBehaviour
 {
+    public Action _OnAnimationDone;
        
     public void ShowCollectAnimation()
     {
@@ -13,6 +15,13 @@ public class WheatCubeView : MonoBehaviour
 
     private void CubeCollect()
     {
+        _OnAnimationDone?.Invoke();
         Destroy(gameObject);
+    }
+
+    public void Destroy()
+    {
+        Debug.Log("Destroy");
+        
     }
 }

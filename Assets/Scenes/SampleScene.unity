@@ -183,7 +183,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43319704}
   m_LocalRotation: {x: 0.41192967, y: -0.00000002350388, z: 0.000000010625303, w: 0.9112157}
-  m_LocalPosition: {x: -3.3199995, y: 4.5, z: -8.849999}
+  m_LocalPosition: {x: -3.3199995, y: 4.538, z: -8.849999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 548047116}
@@ -1140,7 +1140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.41192967, y: -0.00000002350388, z: 0.000000010625303, w: 0.9112157}
-  m_LocalPosition: {x: -3.3199995, y: 4.5, z: -8.849999}
+  m_LocalPosition: {x: -3.3199995, y: 4.538, z: -8.849999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1403,7 +1403,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1303557999}
-  - component: {fileID: 1303558000}
   m_Layer: 0
   m_Name: WheatPatches
   m_TagString: Untagged
@@ -1426,18 +1425,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1303558000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303557998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ad579c4b2dfc324e908777a1325cea3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1333499716
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,6 +1561,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1376641439}
+  - component: {fileID: 1376641440}
   m_Layer: 0
   m_Name: WheatBag
   m_TagString: Untagged
@@ -1600,6 +1588,18 @@ Transform:
   m_Father: {fileID: 5742672708162702429}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1376641440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376641438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 735b001c5bc93fd499d4eb5eedad42b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1576532270 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4122536980541368597, guid: 2848a0806986778408b04c54197ae691, type: 3}
@@ -2178,7 +2178,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125329628}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -3.32, y: 0, z: -4.89}
+  m_LocalPosition: {x: -3.32, y: 0.038, z: -4.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5564963838204443615}
@@ -2548,16 +2548,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Patch (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 2302842319046941542, guid: fc35e4a615ded2842a14098168fffb61, type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2302842319046941542, guid: fc35e4a615ded2842a14098168fffb61, type: 3}
-      propertyPath: m_Size.z
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2302842319046941539, guid: fc35e4a615ded2842a14098168fffb61, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc35e4a615ded2842a14098168fffb61, type: 3}
 --- !u!4 &1330755669858153309
 Transform:
@@ -6532,13 +6523,26 @@ GameObject:
   - component: {fileID: 1720936528187162510}
   - component: {fileID: 4284752764881410100}
   - component: {fileID: 2344100454557747717}
+  - component: {fileID: 5374804780288029861}
   m_Layer: 0
   m_Name: WheatCube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804780288029861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804780288029860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804780313281657
 GameObject:
   m_ObjectHideFlags: 0
@@ -6551,13 +6555,26 @@ GameObject:
   - component: {fileID: 1720936528161558355}
   - component: {fileID: 4284752764873451753}
   - component: {fileID: 2344100454532233944}
+  - component: {fileID: 5374804780313281658}
   m_Layer: 0
   m_Name: WheatCube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804780313281658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804780313281657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804780418436217
 GameObject:
   m_ObjectHideFlags: 0
@@ -6570,13 +6587,26 @@ GameObject:
   - component: {fileID: 1720936527998797651}
   - component: {fileID: 4284752765045645545}
   - component: {fileID: 2344100454368359128}
+  - component: {fileID: 5374804780418436218}
   m_Layer: 0
   m_Name: WheatCube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804780418436218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804780418436217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804780472279698
 GameObject:
   m_ObjectHideFlags: 0
@@ -6589,13 +6619,26 @@ GameObject:
   - component: {fileID: 1720936528070994360}
   - component: {fileID: 4284752764965064194}
   - component: {fileID: 2344100454302194739}
+  - component: {fileID: 5374804780472279699}
   m_Layer: 0
   m_Name: WheatCube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804780472279699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804780472279698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804780563617698
 GameObject:
   m_ObjectHideFlags: 0
@@ -6608,13 +6651,26 @@ GameObject:
   - component: {fileID: 1720936528448167048}
   - component: {fileID: 4284752765157276466}
   - component: {fileID: 2344100454277605635}
+  - component: {fileID: 5374804780563617699}
   m_Layer: 0
   m_Name: WheatCube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804780563617699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804780563617698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804780571275676
 GameObject:
   m_ObjectHideFlags: 0
@@ -6627,6 +6683,7 @@ GameObject:
   - component: {fileID: 1720936528440523446}
   - component: {fileID: 4284752765131365644}
   - component: {fileID: 2344100454270046013}
+  - component: {fileID: 5374804780571275677}
   m_Layer: 0
   m_Name: WheatCube (4)
   m_TagString: Untagged
@@ -6634,6 +6691,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5374804780571275677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804780571275676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804780622508115
 GameObject:
   m_ObjectHideFlags: 0
@@ -6646,13 +6715,26 @@ GameObject:
   - component: {fileID: 1720936528523705209}
   - component: {fileID: 4284752765081738435}
   - component: {fileID: 2344100454219108082}
+  - component: {fileID: 5374804780622508116}
   m_Layer: 0
   m_Name: WheatCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804780622508116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804780622508115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804780782377762
 GameObject:
   m_ObjectHideFlags: 0
@@ -6665,13 +6747,26 @@ GameObject:
   - component: {fileID: 1720936528364933128}
   - component: {fileID: 4284752765208000434}
   - component: {fileID: 2344100454059107715}
+  - component: {fileID: 5374804780782377763}
   m_Layer: 0
   m_Name: WheatCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804780782377763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804780782377762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804780832769086
 GameObject:
   m_ObjectHideFlags: 0
@@ -6684,13 +6779,26 @@ GameObject:
   - component: {fileID: 1720936528717188884}
   - component: {fileID: 4284752764352424110}
   - component: {fileID: 2344100455082588831}
+  - component: {fileID: 5374804780832769087}
   m_Layer: 0
   m_Name: WheatCube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804780832769087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804780832769086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804780912108848
 GameObject:
   m_ObjectHideFlags: 0
@@ -6703,13 +6811,26 @@ GameObject:
   - component: {fileID: 1720936528779357722}
   - component: {fileID: 4284752764264040864}
   - component: {fileID: 2344100455011507089}
+  - component: {fileID: 5374804780912108849}
   m_Layer: 0
   m_Name: WheatCube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804780912108849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804780912108848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804780938964948
 GameObject:
   m_ObjectHideFlags: 0
@@ -6722,13 +6843,26 @@ GameObject:
   - component: {fileID: 1720936528550913278}
   - component: {fileID: 4284752764526035780}
   - component: {fileID: 2344100454921441653}
+  - component: {fileID: 5374804780938964949}
   m_Layer: 0
   m_Name: WheatCube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804780938964949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804780938964948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804780979527159
 GameObject:
   m_ObjectHideFlags: 0
@@ -6741,6 +6875,7 @@ GameObject:
   - component: {fileID: 1720936528578762461}
   - component: {fileID: 4284752764465688935}
   - component: {fileID: 2344100454944187222}
+  - component: {fileID: 5374804780979527160}
   m_Layer: 0
   m_Name: WheatCube
   m_TagString: Untagged
@@ -6748,6 +6883,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5374804780979527160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804780979527159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804780998826051
 GameObject:
   m_ObjectHideFlags: 0
@@ -6760,13 +6907,26 @@ GameObject:
   - component: {fileID: 1720936528616936297}
   - component: {fileID: 4284752764451632339}
   - component: {fileID: 2344100454849128162}
+  - component: {fileID: 5374804780998826052}
   m_Layer: 0
   m_Name: WheatCube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804780998826052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804780998826051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781084815303
 GameObject:
   m_ObjectHideFlags: 0
@@ -6779,13 +6939,26 @@ GameObject:
   - component: {fileID: 1720936528933610733}
   - component: {fileID: 4284752764638266199}
   - component: {fileID: 2344100454767333734}
+  - component: {fileID: 5374804781084815304}
   m_Layer: 0
   m_Name: WheatCube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804781084815304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781084815303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781141643681
 GameObject:
   m_ObjectHideFlags: 0
@@ -6798,6 +6971,7 @@ GameObject:
   - component: {fileID: 1720936529010989707}
   - component: {fileID: 4284752764560899377}
   - component: {fileID: 2344100454706212608}
+  - component: {fileID: 5374804781141643682}
   m_Layer: 0
   m_Name: WheatCube (2)
   m_TagString: Untagged
@@ -6805,6 +6979,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5374804781141643682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781141643681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781149585921
 GameObject:
   m_ObjectHideFlags: 0
@@ -6817,6 +7003,7 @@ GameObject:
   - component: {fileID: 1720936529012672811}
   - component: {fileID: 4284752764568645265}
   - component: {fileID: 2344100454711082144}
+  - component: {fileID: 5374804781149585922}
   m_Layer: 0
   m_Name: WheatCube (5)
   m_TagString: Untagged
@@ -6824,6 +7011,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5374804781149585922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781149585921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781200568371
 GameObject:
   m_ObjectHideFlags: 0
@@ -6836,6 +7035,7 @@ GameObject:
   - component: {fileID: 1720936528818125593}
   - component: {fileID: 4284752764787317923}
   - component: {fileID: 2344100454647680658}
+  - component: {fileID: 5374804781200568372}
   m_Layer: 0
   m_Name: WheatCube (1)
   m_TagString: Untagged
@@ -6843,6 +7043,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5374804781200568372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781200568371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781274532674
 GameObject:
   m_ObjectHideFlags: 0
@@ -6855,13 +7067,26 @@ GameObject:
   - component: {fileID: 1720936528886481000}
   - component: {fileID: 4284752764727338962}
   - component: {fileID: 2344100454585873891}
+  - component: {fileID: 5374804781274532675}
   m_Layer: 0
   m_Name: WheatCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804781274532675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781274532674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781360144902
 GameObject:
   m_ObjectHideFlags: 0
@@ -6874,13 +7099,26 @@ GameObject:
   - component: {fileID: 1720936529263569196}
   - component: {fileID: 4284752765953527446}
   - component: {fileID: 2344100455628823719}
+  - component: {fileID: 5374804781360144903}
   m_Layer: 0
   m_Name: WheatCube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804781360144903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781360144902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781440641781
 GameObject:
   m_ObjectHideFlags: 0
@@ -6893,13 +7131,26 @@ GameObject:
   - component: {fileID: 1720936529324564959}
   - component: {fileID: 4284752765899867749}
   - component: {fileID: 2344100455556813908}
+  - component: {fileID: 5374804781440641782}
   m_Layer: 0
   m_Name: WheatCube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804781440641782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781440641781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781516286261
 GameObject:
   m_ObjectHideFlags: 0
@@ -6912,13 +7163,26 @@ GameObject:
   - component: {fileID: 1720936529115488799}
   - component: {fileID: 4284752766076437925}
   - component: {fileID: 2344100455480940436}
+  - component: {fileID: 5374804781516286262}
   m_Layer: 0
   m_Name: WheatCube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804781516286262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781516286261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781532585634
 GameObject:
   m_ObjectHideFlags: 0
@@ -6931,13 +7195,26 @@ GameObject:
   - component: {fileID: 1720936529165505928}
   - component: {fileID: 4284752766058934834}
   - component: {fileID: 2344100455397629955}
+  - component: {fileID: 5374804781532585635}
   m_Layer: 0
   m_Name: WheatCube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804781532585635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781532585634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781579443875
 GameObject:
   m_ObjectHideFlags: 0
@@ -6950,13 +7227,26 @@ GameObject:
   - component: {fileID: 1720936529178154377}
   - component: {fileID: 4284752766005391923}
   - component: {fileID: 2344100455409360898}
+  - component: {fileID: 5374804781579443876}
   m_Layer: 0
   m_Name: WheatCube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804781579443876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781579443875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781625828012
 GameObject:
   m_ObjectHideFlags: 0
@@ -6969,6 +7259,7 @@ GameObject:
   - component: {fileID: 1720936529474726278}
   - component: {fileID: 4284752766253026876}
   - component: {fileID: 2344100455308352525}
+  - component: {fileID: 5374804781625828013}
   m_Layer: 0
   m_Name: WheatCube (7)
   m_TagString: Untagged
@@ -6976,6 +7267,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5374804781625828013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781625828012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781654962028
 GameObject:
   m_ObjectHideFlags: 0
@@ -6988,13 +7291,26 @@ GameObject:
   - component: {fileID: 1720936529505297478}
   - component: {fileID: 4284752766215111676}
   - component: {fileID: 2344100455333876173}
+  - component: {fileID: 5374804781654962029}
   m_Layer: 0
   m_Name: WheatCube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804781654962029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781654962028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781717470023
 GameObject:
   m_ObjectHideFlags: 0
@@ -7007,13 +7323,26 @@ GameObject:
   - component: {fileID: 1720936529584615533}
   - component: {fileID: 4284752766143141847}
   - component: {fileID: 2344100455279986150}
+  - component: {fileID: 5374804781717470024}
   m_Layer: 0
   m_Name: WheatCube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804781717470024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781717470023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781727904880
 GameObject:
   m_ObjectHideFlags: 0
@@ -7026,13 +7355,26 @@ GameObject:
   - component: {fileID: 1720936529574182746}
   - component: {fileID: 4284752766153578720}
   - component: {fileID: 2344100455273646801}
+  - component: {fileID: 5374804781727904881}
   m_Layer: 0
   m_Name: WheatCube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804781727904881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781727904880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781797688759
 GameObject:
   m_ObjectHideFlags: 0
@@ -7045,13 +7387,26 @@ GameObject:
   - component: {fileID: 1720936529429925533}
   - component: {fileID: 4284752766324042023}
   - component: {fileID: 2344100455124302614}
+  - component: {fileID: 5374804781797688760}
   m_Layer: 0
   m_Name: WheatCube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804781797688760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781797688759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781823526099
 GameObject:
   m_ObjectHideFlags: 0
@@ -7064,13 +7419,26 @@ GameObject:
   - component: {fileID: 1720936529403891705}
   - component: {fileID: 4284752766316521539}
   - component: {fileID: 2344100455102364274}
+  - component: {fileID: 5374804781823526100}
   m_Layer: 0
   m_Name: WheatCube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804781823526100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781823526099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781838190953
 GameObject:
   m_ObjectHideFlags: 0
@@ -7083,13 +7451,26 @@ GameObject:
   - component: {fileID: 1720936529456267843}
   - component: {fileID: 4284752766297695737}
   - component: {fileID: 2344100455150647240}
+  - component: {fileID: 5374804781838190954}
   m_Layer: 0
   m_Name: WheatCube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804781838190954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781838190953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781913878634
 GameObject:
   m_ObjectHideFlags: 0
@@ -7102,13 +7483,26 @@ GameObject:
   - component: {fileID: 1720936529783257920}
   - component: {fileID: 4284752765400292602}
   - component: {fileID: 2344100456148537035}
+  - component: {fileID: 5374804781913878635}
   m_Layer: 0
   m_Name: WheatCube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804781913878635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781913878634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781944512497
 GameObject:
   m_ObjectHideFlags: 0
@@ -7121,13 +7515,26 @@ GameObject:
   - component: {fileID: 1720936529828435163}
   - component: {fileID: 4284752765397054305}
   - component: {fileID: 2344100456059576656}
+  - component: {fileID: 5374804781944512498}
   m_Layer: 0
   m_Name: WheatCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804781944512498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781944512497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781977311404
 GameObject:
   m_ObjectHideFlags: 0
@@ -7140,13 +7547,26 @@ GameObject:
   - component: {fileID: 1720936529861366662}
   - component: {fileID: 4284752765363074108}
   - component: {fileID: 2344100456093492749}
+  - component: {fileID: 5374804781977311405}
   m_Layer: 0
   m_Name: WheatCube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804781977311405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781977311404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804781997732582
 GameObject:
   m_ObjectHideFlags: 0
@@ -7159,13 +7579,26 @@ GameObject:
   - component: {fileID: 1720936529632623052}
   - component: {fileID: 4284752765584481910}
   - component: {fileID: 2344100455997967431}
+  - component: {fileID: 5374804781997732583}
   m_Layer: 0
   m_Name: WheatCube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804781997732583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804781997732582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804782044843710
 GameObject:
   m_ObjectHideFlags: 0
@@ -7178,13 +7611,26 @@ GameObject:
   - component: {fileID: 1720936529660986772}
   - component: {fileID: 4284752765564494382}
   - component: {fileID: 2344100456026222623}
+  - component: {fileID: 5374804782044843711}
   m_Layer: 0
   m_Name: WheatCube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804782044843711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804782044843710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804782059591378
 GameObject:
   m_ObjectHideFlags: 0
@@ -7197,13 +7643,26 @@ GameObject:
   - component: {fileID: 1720936529637858808}
   - component: {fileID: 4284752765545691714}
   - component: {fileID: 2344100456007411827}
+  - component: {fileID: 5374804782059591379}
   m_Layer: 0
   m_Name: WheatCube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804782059591379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804782059591378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804782085702441
 GameObject:
   m_ObjectHideFlags: 0
@@ -7216,6 +7675,7 @@ GameObject:
   - component: {fileID: 1720936529687169027}
   - component: {fileID: 4284752765504761785}
   - component: {fileID: 2344100455918255496}
+  - component: {fileID: 5374804782085702442}
   m_Layer: 0
   m_Name: WheatCube (6)
   m_TagString: Untagged
@@ -7223,6 +7683,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5374804782085702442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804782085702441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804782169535635
 GameObject:
   m_ObjectHideFlags: 0
@@ -7235,13 +7707,26 @@ GameObject:
   - component: {fileID: 1720936530072862649}
   - component: {fileID: 4284752765689501699}
   - component: {fileID: 2344100455901399602}
+  - component: {fileID: 5374804782169535636}
   m_Layer: 0
   m_Name: WheatCube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804782169535636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804782169535635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804782180934258
 GameObject:
   m_ObjectHideFlags: 0
@@ -7254,13 +7739,26 @@ GameObject:
   - component: {fileID: 1720936530060667224}
   - component: {fileID: 4284752765700640482}
   - component: {fileID: 2344100455894457555}
+  - component: {fileID: 5374804782180934259}
   m_Layer: 0
   m_Name: WheatCube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5374804782180934259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804782180934258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5374804782215685963
 GameObject:
   m_ObjectHideFlags: 0
@@ -7273,6 +7771,7 @@ GameObject:
   - component: {fileID: 1720936530085424225}
   - component: {fileID: 4284752765634989019}
   - component: {fileID: 2344100455779785194}
+  - component: {fileID: 5374804782215685964}
   m_Layer: 0
   m_Name: WheatCube (3)
   m_TagString: Untagged
@@ -7280,6 +7779,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5374804782215685964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374804782215685963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12971ea220f6a094bb1932b9747ced10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5423976338672855591
 GameObject:
   m_ObjectHideFlags: 0

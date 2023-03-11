@@ -22,10 +22,12 @@ public class EntryPoint : MonoBehaviour
     private PlayerController _playerController;
     private WheatPatchView[] _wheatPatchView;
     private WheatController[] _wheatController;
+    private WheatBag _wheatBag;
 
 
     void Awake()
     {
+        _wheatBag = _playerView.gameObject.GetComponentInChildren<WheatBag>();
         _inputManager = new InputManager(_touchControllerObject);
         _playerController = new PlayerController(_inputManager, _playerView, _touchController);
        
@@ -51,7 +53,7 @@ public class EntryPoint : MonoBehaviour
         {
             _wheatPatchView[i] = _patches[i].GetComponent<WheatPatchView>();
            
-            _wheatController[i] = new WheatController(_wheatPatchView[i], _playerView);
+            _wheatController[i] = new WheatController(_wheatPatchView[i], _wheatBag, _playerView);
         }
     }
 }

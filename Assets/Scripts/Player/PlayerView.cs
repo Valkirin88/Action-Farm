@@ -6,6 +6,7 @@ public class PlayerView : MonoBehaviour
     private const string Slash = "Slash";
 
     public Action OnWheatCollected;
+    public Action OnWheatUnloaded;
     
     [SerializeField]
     private float _acceleration  = 2;
@@ -18,7 +19,9 @@ public class PlayerView : MonoBehaviour
 
     private int _wheatCount;
    
-    private bool _isIdle = true; 
+    private bool _isIdle = true;
+
+    public int WheatCount  => _wheatCount; 
 
     private void Start()
     {
@@ -29,15 +32,23 @@ public class PlayerView : MonoBehaviour
     private void Update()
     {
         if (!_isIdle)
-        transform.position = transform.position + new Vector3(_direction.x, 0, _direction.y) * Time.deltaTime * _acceleration;
+        {
+            _animator.ResetTrigger(Slash);
+            transform.position = transform.position + new Vector3(_direction.x, 0, _direction.y) * Time.deltaTime * _acceleration;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<WheatCubeView>() && _wheatCount<40)
+        if(other.GetComponent<WheatCubeView>() && _wheatCount < 40)
         {
+            _wheatCount++;
             OnWheatCollected?.Invoke();
             other.GetComponent<Collider>().enabled = false;
+        }
+        if(other.GetComponent<Barn_house>() && _wheatCount > 0)
+        {
+            OnWheatUnloaded?.Invoke();
         }
     }
 
@@ -51,7 +62,6 @@ public class PlayerView : MonoBehaviour
 
     public void Move(Vector2 direction)
     {
-        _animator.ResetTrigger(Slash);
         _direction = direction;
         _direction.Normalize();
         _animator.SetBool("Idle", false);
