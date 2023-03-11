@@ -23,7 +23,7 @@ public class CanvasHandler : MonoBehaviour
     [SerializeField]
     private PlayerView _playerView;
     [SerializeField]
-    private float _countdownTime = 0.2f;
+    private float _countdownTime = 0.01f;
 
     private void Start()
     {
@@ -55,7 +55,7 @@ public class CanvasHandler : MonoBehaviour
 
     private IEnumerator WaitForNextCount()
     {
-        yield return new WaitForSeconds(_countdownTime);
+        yield return new WaitForSeconds(0.1f);
         _wheat--;
         ShowResources(_coins, _wheat);
         WheatCountdown();

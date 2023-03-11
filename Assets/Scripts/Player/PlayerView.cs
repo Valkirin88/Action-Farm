@@ -21,7 +21,8 @@ public class PlayerView : MonoBehaviour
    
     private bool _isIdle = true;
 
-   
+    public int WheatCount => _wheatCount;
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
@@ -37,21 +38,26 @@ public class PlayerView : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
+    //private void OnTriggerStay(Collider other)
+    //{
       
-        if(other.GetComponent<Barn_house>() && _wheatCount > 0)
-        {
-            OnNearBarn?.Invoke();
-            _wheatCount = 0;
-        }
-    }
+    //    if(other.GetComponent<Barn_house>() && WheatCount > 0)
+    //    {
+    //        OnNearBarn?.Invoke();
+    //        _wheatCount = 0;
+    //    }
+    //}
 
     private void OnTriggerStay(Collider other)
     {
         if (other.GetComponent<WheatPatchView>() != null)
         {
             ShowSlash();
+        }
+        if (other.GetComponent<Barn_house>() && WheatCount > 0)
+        {
+            OnNearBarn?.Invoke();
+            _wheatCount = 0;
         }
     }
 
@@ -90,7 +96,7 @@ public class PlayerView : MonoBehaviour
     public void AddWheat()
     {
         _wheatCount++;
-        OnWheatCountChanged?.Invoke(_wheatCount);
+        OnWheatCountChanged?.Invoke(WheatCount);
     }
 
 }

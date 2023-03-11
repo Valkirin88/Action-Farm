@@ -11,10 +11,13 @@ public class WheatCubeView : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<PlayerView>() != null)
+        if(other.TryGetComponent<PlayerView>(out PlayerView playerView))
         {
-            OnCubeCollect?.Invoke();
-            ShowCollectAnimation();
+            if (playerView.WheatCount < 40)
+            {
+                OnCubeCollect?.Invoke();
+                ShowCollectAnimation();
+            }
         }
     }
 
