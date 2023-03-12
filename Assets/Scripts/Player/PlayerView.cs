@@ -7,9 +7,9 @@ public class PlayerView : MonoBehaviour
 
     public Action OnNearBarn;
     public Action<int> OnWheatCountChanged;
-    
+
     [SerializeField]
-    private float _acceleration  = 2;
+    private float _acceleration  = 4f;
 
     [SerializeField]
     private GameObject _sickle;
@@ -37,15 +37,15 @@ public class PlayerView : MonoBehaviour
         _animator.SetBool("Idle", _isIdle);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!_isIdle)
         {
             HideSickle();
             _animator.ResetTrigger(Slash);
-            transform.position = transform.position + new Vector3(_direction.x, 0, _direction.y) * Time.deltaTime * _acceleration;
-           // _rigidbody.AddForce(new Vector3(_direction.x, 0, _direction.y) * _acceleration);
+            _rigidbody.velocity = (new Vector3(_direction.x, 0, _direction.y) * _acceleration);
         }
+    
     }
 
     private void OnTriggerStay(Collider other)
