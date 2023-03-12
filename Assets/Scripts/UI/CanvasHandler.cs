@@ -40,13 +40,14 @@ public class CanvasHandler : MonoBehaviour
     private void ShowResources(int coins, int wheat)
     {
         _coinsCounterText.text =  $"{coins}";
-        _wheatCounterText.text =  $"{wheat}";
+        _wheatCounterText.text =  wheat + "/40";
     }
 
     private void AddWheat(int wheat)
     {
         _wheat = wheat;
-        _wheatCounterText.text = "x" + _wheat;
+        //_wheatCounterText.text = "x" + _wheat;
+        ShowResources(_coins, _wheat);
     }
 
     private void WheatCountdown()

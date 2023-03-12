@@ -14,18 +14,24 @@ public class PlayerView : MonoBehaviour
     [SerializeField]
     private GameObject _sickle;
 
+    [SerializeField]
+    private AudioClip _slashSound;
+    
+    private AudioSource _audioSource;
+    
     private Rigidbody _rigidbody;
     private Animator _animator;
     private Vector2 _direction;
 
     private int _wheatCount;
-   
     private bool _isIdle = true;
+    private bool _isSlash = false;
 
     public int WheatCount => _wheatCount;
 
     private void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         _animator.SetBool("Idle", _isIdle);
@@ -44,8 +50,9 @@ public class PlayerView : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<SlashZone>() != null)
+        if (other.GetComponent<SlashZone>() != null && !_isSlash)
         {
+            _isSlash = true;
             ShowSlash();
         }
         if (other.GetComponent<CoinsHandler>() && WheatCount > 0)
@@ -74,17 +81,25 @@ public class PlayerView : MonoBehaviour
 
     private void ShowSlash()
     {
+
         _animator.SetTrigger(Slash);
+     
     }
 
     private void ShowSickle()
     {
+        _audioSource.clip = _slashSound;
+        _audioSource.Play();
         _sickle.SetActive(true);
+        
     }
 
     private void HideSickle()
     {
+   
         _sickle.SetActive(false);
+        _isSlash = false;
+       
     }
 
     public void AddWheat()
