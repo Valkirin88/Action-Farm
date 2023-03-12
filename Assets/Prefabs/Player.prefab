@@ -970,7 +970,7 @@ GameObject:
   - component: {fileID: 2666105510338938017}
   - component: {fileID: 2666105510338938018}
   - component: {fileID: 2666105510338938019}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Layer_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1076,7 +1076,7 @@ GameObject:
   - component: {fileID: 2666105511077434434}
   - component: {fileID: 2666105511077434435}
   - component: {fileID: 2666105511077434428}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Layer_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1180,7 +1180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2666105511127425594}
   - component: {fileID: 2666105511127425595}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Layer_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1235,7 +1235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2666105511395359516}
   - component: {fileID: 2666105511395359523}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatBag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1287,7 +1287,7 @@ GameObject:
   - component: {fileID: 2666105511942755446}
   - component: {fileID: 2666105511942755447}
   - component: {fileID: 2666105511942755440}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Layer_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1391,10 +1391,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2666105512005627485}
   - component: {fileID: 2666105512005627486}
-  - component: {fileID: 2666105512005627484}
   - component: {fileID: 2666105512005627491}
   - component: {fileID: 2666105512005627490}
   - component: {fileID: 2125329634}
+  - component: {fileID: 6313799}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1430,22 +1430,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ba96f72a7375140851ee194f65568c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _acceleration: 2
+  _acceleration: 4
   _sickle: {fileID: 2146485689472473887}
   _slashSound: {fileID: 8300000, guid: 46d3012edfcb87c40bd13c0e476afd61, type: 3}
---- !u!65 &2666105512005627484
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2666105512005627487}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.49, y: 1.49, z: 0.4}
-  m_Center: {x: 0, y: 0.79, z: 0}
 --- !u!54 &2666105512005627491
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1454,13 +1441,13 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2666105512005627487}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 100
+  m_Drag: 10
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!95 &2666105512005627490
 Animator:
@@ -1577,6 +1564,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &6313799
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2666105512005627487}
+  m_Material: {fileID: 13400000, guid: 1da24dfaf1552b141b2f8d09b9eed64d, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.33
+  m_Height: 1.82
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.87, z: 0}
 --- !u!1 &2666105512101221761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,7 +1590,7 @@ GameObject:
   - component: {fileID: 2666105512101221765}
   - component: {fileID: 2666105512101221766}
   - component: {fileID: 2666105512101221767}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Layer_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2761,7 +2762,7 @@ GameObject:
   - component: {fileID: 2272513677111477824}
   - component: {fileID: 322009742533481585}
   - component: {fileID: 7955833791601240791}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2869,7 +2870,7 @@ GameObject:
   - component: {fileID: 2272513677052731825}
   - component: {fileID: 322009742458221440}
   - component: {fileID: 7955833791676894496}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2977,7 +2978,7 @@ GameObject:
   - component: {fileID: 2272513677026690959}
   - component: {fileID: 322009742450529726}
   - component: {fileID: 7955833791684422430}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3085,7 +3086,7 @@ GameObject:
   - component: {fileID: 2272513677237939505}
   - component: {fileID: 322009742373682944}
   - component: {fileID: 7955833791761170848}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3193,7 +3194,7 @@ GameObject:
   - component: {fileID: 2272513677309674167}
   - component: {fileID: 322009742196904070}
   - component: {fileID: 7955833791933591078}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3301,7 +3302,7 @@ GameObject:
   - component: {fileID: 2272513677301396074}
   - component: {fileID: 322009742171578459}
   - component: {fileID: 7955833791959179001}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3409,7 +3410,7 @@ GameObject:
   - component: {fileID: 2272513677464573057}
   - component: {fileID: 322009742146799280}
   - component: {fileID: 7955833792054999056}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3517,7 +3518,7 @@ GameObject:
   - component: {fileID: 2272513677398162026}
   - component: {fileID: 322009742066493531}
   - component: {fileID: 7955833792122984185}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3625,7 +3626,7 @@ GameObject:
   - component: {fileID: 2272513676518831122}
   - component: {fileID: 322009743080105507}
   - component: {fileID: 7955833792182982785}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3733,7 +3734,7 @@ GameObject:
   - component: {fileID: 2272513676523464626}
   - component: {fileID: 322009743088153987}
   - component: {fileID: 7955833792187812641}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3841,7 +3842,7 @@ GameObject:
   - component: {fileID: 2272513676462299604}
   - component: {fileID: 322009743010728933}
   - component: {fileID: 7955833792260879691}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3949,7 +3950,7 @@ GameObject:
   - component: {fileID: 2272513676677332305}
   - component: {fileID: 322009742955229024}
   - component: {fileID: 7955833792308122048}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4057,7 +4058,7 @@ GameObject:
   - component: {fileID: 2272513676615796256}
   - component: {fileID: 322009742895010833}
   - component: {fileID: 7955833792380562103}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4165,7 +4166,7 @@ GameObject:
   - component: {fileID: 2272513676822401827}
   - component: {fileID: 322009742780743954}
   - component: {fileID: 7955833792419463090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4273,7 +4274,7 @@ GameObject:
   - component: {fileID: 2272513676784890413}
   - component: {fileID: 322009742725931036}
   - component: {fileID: 7955833792482533052}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4381,7 +4382,7 @@ GameObject:
   - component: {fileID: 2272513676950941264}
   - component: {fileID: 322009742694071393}
   - component: {fileID: 7955833792581731015}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4489,7 +4490,7 @@ GameObject:
   - component: {fileID: 2272513676889697252}
   - component: {fileID: 322009742579087829}
   - component: {fileID: 7955833792620955515}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4597,7 +4598,7 @@ GameObject:
   - component: {fileID: 2272513676878617031}
   - component: {fileID: 322009742619642870}
   - component: {fileID: 7955833792643708246}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4705,7 +4706,7 @@ GameObject:
   - component: {fileID: 2272513678164495700}
   - component: {fileID: 322009743585976165}
   - component: {fileID: 7955833792687808971}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4813,7 +4814,7 @@ GameObject:
   - component: {fileID: 2272513678170866275}
   - component: {fileID: 322009743575568466}
   - component: {fileID: 7955833792694185714}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4921,7 +4922,7 @@ GameObject:
   - component: {fileID: 2272513678110382463}
   - component: {fileID: 322009743514291022}
   - component: {fileID: 7955833792768177646}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5029,7 +5030,7 @@ GameObject:
   - component: {fileID: 2272513678068798655}
   - component: {fileID: 322009743543486094}
   - component: {fileID: 7955833792793638958}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5137,7 +5138,7 @@ GameObject:
   - component: {fileID: 2272513678327185274}
   - component: {fileID: 322009743465278795}
   - component: {fileID: 7955833792817189865}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5245,7 +5246,7 @@ GameObject:
   - component: {fileID: 2272513678286680996}
   - component: {fileID: 322009743505777045}
   - component: {fileID: 7955833792843538235}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5353,7 +5354,7 @@ GameObject:
   - component: {fileID: 2272513678274769600}
   - component: {fileID: 322009743479972081}
   - component: {fileID: 7955833792865377879}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5461,7 +5462,7 @@ GameObject:
   - component: {fileID: 2272513678458100966}
   - component: {fileID: 322009743325925079}
   - component: {fileID: 7955833792947859573}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5569,7 +5570,7 @@ GameObject:
   - component: {fileID: 2272513678386123797}
   - component: {fileID: 322009743272298020}
   - component: {fileID: 7955833793010038916}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5677,7 +5678,7 @@ GameObject:
   - component: {fileID: 2272513678571743408}
   - component: {fileID: 322009743187131009}
   - component: {fileID: 7955833793095304231}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5785,7 +5786,7 @@ GameObject:
   - component: {fileID: 2272513678550182065}
   - component: {fileID: 322009743233989248}
   - component: {fileID: 7955833793107035168}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5893,7 +5894,7 @@ GameObject:
   - component: {fileID: 2272513678500192038}
   - component: {fileID: 322009743116094743}
   - component: {fileID: 7955833793157985205}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6001,7 +6002,7 @@ GameObject:
   - component: {fileID: 2272513677597364568}
   - component: {fileID: 322009744161522537}
   - component: {fileID: 7955833793261796815}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6109,7 +6110,7 @@ GameObject:
   - component: {fileID: 2272513677576372864}
   - component: {fileID: 322009744073429169}
   - component: {fileID: 7955833793274359319}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6217,7 +6218,7 @@ GameObject:
   - component: {fileID: 2272513677583586401}
   - component: {fileID: 322009744062023248}
   - component: {fileID: 7955833793281308912}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6325,7 +6326,7 @@ GameObject:
   - component: {fileID: 2272513677921169087}
   - component: {fileID: 322009743863004302}
   - component: {fileID: 7955833793484915246}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6433,7 +6434,7 @@ GameObject:
   - component: {fileID: 2272513677888236002}
   - component: {fileID: 322009743895870419}
   - component: {fileID: 7955833793518765425}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6541,7 +6542,7 @@ GameObject:
   - component: {fileID: 2272513677832554105}
   - component: {fileID: 322009743792215112}
   - component: {fileID: 7955833793564093160}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6649,7 +6650,7 @@ GameObject:
   - component: {fileID: 2272513677996012858}
   - component: {fileID: 322009743754602251}
   - component: {fileID: 7955833793660164521}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6757,7 +6758,7 @@ GameObject:
   - component: {fileID: 2272513677988706477}
   - component: {fileID: 322009743661312668}
   - component: {fileID: 7955833793686344764}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6865,7 +6866,7 @@ GameObject:
   - component: {fileID: 2272513677973954753}
   - component: {fileID: 322009743646569200}
   - component: {fileID: 7955833793705151568}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6973,7 +6974,7 @@ GameObject:
   - component: {fileID: 2272513677949830389}
   - component: {fileID: 322009743708427972}
   - component: {fileID: 7955833793714595940}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WheatCube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7229,6 +7230,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4416417273463397882}
     m_Modifications:
+    - target: {fileID: 4122536980077856726, guid: 2848a0806986778408b04c54197ae691, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4122536980541368586, guid: 2848a0806986778408b04c54197ae691, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -7278,12 +7283,40 @@ PrefabInstance:
       value: Sickle_001
       objectReference: {fileID: 0}
     - target: {fileID: 4122536980541368597, guid: 2848a0806986778408b04c54197ae691, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122536980541368597, guid: 2848a0806986778408b04c54197ae691, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4122536980541368597, guid: 2848a0806986778408b04c54197ae691, type: 3}
       propertyPath: m_TagString
       value: Sickle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122536980830170121, guid: 2848a0806986778408b04c54197ae691, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122536980869241710, guid: 2848a0806986778408b04c54197ae691, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122536981128123939, guid: 2848a0806986778408b04c54197ae691, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122536981239940340, guid: 2848a0806986778408b04c54197ae691, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122536981616427063, guid: 2848a0806986778408b04c54197ae691, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122536981955429724, guid: 2848a0806986778408b04c54197ae691, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2848a0806986778408b04c54197ae691, type: 3}

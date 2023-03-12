@@ -49,7 +49,7 @@ public class CoinsHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         _index = _wheatCount * 15 - 1;
-        OnCoinGet?.Invoke(_index);
+        OnCoinGet?.Invoke(_wheatCount * 15);
         MoveCoins();
     }
 

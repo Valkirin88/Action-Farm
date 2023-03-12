@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1256066636738065035}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WheatStage_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 1256066637591193927}
   - component: {fileID: 1256066637591193930}
   - component: {fileID: 2302842319046941542}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Patch (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,11 +148,11 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256066637591193931}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1da24dfaf1552b141b2f8d09b9eed64d, type: 2}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.46, y: 17.2, z: 0.53}
+  m_Size: {x: 0.46, y: 17.01, z: 0.53}
   m_Center: {x: 0, y: 8.9, z: 0}
 --- !u!1 &1256066637989466110
 GameObject:
@@ -163,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1256066637989466105}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WheatStage_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1256066638452734921}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WhaetStage_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1256066638781330806}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WheatStage_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1256066638805492972}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WheatStage_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 3617277093661620533}
   - component: {fileID: 6371529060548250634}
   - component: {fileID: 3298031203938566958}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stage_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 3617277093673133331}
   - component: {fileID: 6371529060536700972}
   - component: {fileID: 3298031203985743624}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stege_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   - component: {fileID: 375389964261778189}
   - component: {fileID: 5231897408665447295}
   - component: {fileID: 8831503870992986182}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stage_3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +531,7 @@ GameObject:
   - component: {fileID: 9043071675882949493}
   - component: {fileID: 436236709688096208}
   - component: {fileID: 2189622942906365080}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 10458_Wheat_Field_v1_SG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,7 +612,7 @@ GameObject:
   - component: {fileID: 7394728909742994512}
   - component: {fileID: 5005315379587482116}
   - component: {fileID: 1858184713999861307}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PatchZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -641,7 +641,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6671313103779988408}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3, y: 7.46, z: 3}
