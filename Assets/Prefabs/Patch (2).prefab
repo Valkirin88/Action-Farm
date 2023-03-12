@@ -138,7 +138,7 @@ MonoBehaviour:
   - {fileID: 1256066636738065032}
   - {fileID: 1256066638781330807}
   _crossSectionMaterial: {fileID: 2100000, guid: 85ebd50e9333ef34fac0a9566856c851, type: 2}
-  _readyWheat: {fileID: 4250389402769396774}
+  _readyWheat: {fileID: 5182754153589440407, guid: 39e3ddb4d8abd064c832b316ad525c00, type: 3}
   _cubePrefab: {fileID: 5374804781546134143, guid: 0466fe978306e2b42a7d3149cd234b9d, type: 3}
 --- !u!65 &2302842319046941542
 BoxCollider:

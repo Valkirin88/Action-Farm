@@ -14,6 +14,7 @@ public class PlayerView : MonoBehaviour
     [SerializeField]
     private GameObject _sickle;
 
+    private Rigidbody _rigidbody;
     private Animator _animator;
     private Vector2 _direction;
 
@@ -25,6 +26,7 @@ public class PlayerView : MonoBehaviour
 
     private void Start()
     {
+        _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         _animator.SetBool("Idle", _isIdle);
     }
@@ -36,6 +38,7 @@ public class PlayerView : MonoBehaviour
             HideSickle();
             _animator.ResetTrigger(Slash);
             transform.position = transform.position + new Vector3(_direction.x, 0, _direction.y) * Time.deltaTime * _acceleration;
+           // _rigidbody.AddForce(new Vector3(_direction.x, 0, _direction.y) * _acceleration);
         }
     }
 

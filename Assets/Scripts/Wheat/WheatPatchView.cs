@@ -1,4 +1,3 @@
-using EzySlice;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -25,7 +24,8 @@ public class WheatPatchView : MonoBehaviour
     private int _cuttingStep = 1;
     private bool _isReadyToBeCut = true;
 
-    private GameObject[] _slicedObject;
+    private GameObject _highPart;
+    private GameObject _lowPart;
     private GameObject _cubeOnScene;
 
     public GameObject CubeOnScene  => _cubeOnScene; 
@@ -118,29 +118,25 @@ public class WheatPatchView : MonoBehaviour
         switch(step)
         {
             case 0:
-                Destroy(_slicedObject[0]);
-                Destroy(_slicedObject[1]);
+                Destroy(_highPart);
+                Destroy(_lowPart);
                 _cuttingStep++;
                 _isReadyToBeCut=false;
                 break;
             case 1:
-                _slicedObject = Slice(new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z - 0.5f), new Vector3(0, 1, 0), new TextureRegion());
                 _growingState[4].SetActive(false);
-                _slicedObject[0].transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-                _slicedObject[1].transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-                ShowCutAnim(_slicedObject[0]);
+                _highPart = Instantiate(SlicedKeeper.HighPart);
+                _lowPart = Instantiate(SlicedKeeper.LowPart);
+                _highPart.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                _lowPart.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                ShowCutAnim(_highPart);
                 _cuttingStep++;
                 break;
             case 2:
-                ShowCutAnim(_slicedObject[1]);
+                ShowCutAnim(_lowPart);
                 StartCoroutine(WaitForCube());
                 break;
-
         }
-    }    
-    public GameObject[] Slice(Vector3 planeWorldPosition, Vector3 planeWorldDirection, TextureRegion region)
-    {
-        return _readyWheat.SliceInstantiate(planeWorldPosition, planeWorldDirection, region, _crossSectionMaterial);
     }
 
     private void ShowCutAnim(GameObject part)
