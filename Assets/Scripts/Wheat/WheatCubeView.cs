@@ -8,11 +8,13 @@ public class WheatCubeView : MonoBehaviour
     public Action OnCubeCollect;
 
     private Sequence sequence;
+    private Transform _playerTransform;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.TryGetComponent<PlayerView>(out PlayerView playerView))
         {
+            _playerTransform = playerView.transform;
             if (playerView.WheatCount < 40)
             {
                 OnCubeCollect?.Invoke();
@@ -26,7 +28,7 @@ public class WheatCubeView : MonoBehaviour
         gameObject.GetComponent<Collider>().enabled = false;
         sequence = DOTween.Sequence();
         sequence.Append(gameObject.transform.DOMove(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.5f, gameObject.transform.position.z), 0.5f));
-        sequence.Append(gameObject.transform.DOMove(gameObject.transform.position, 0.5f)).onComplete = CubeCollect;
+        sequence.Append(gameObject.transform.DOMove(_playerTransform.position, 0.5f)).onComplete = CubeCollect;
         
     }
 

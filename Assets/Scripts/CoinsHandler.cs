@@ -26,7 +26,7 @@ public class CoinsHandler : MonoBehaviour
     private void Start()
     {
         _playerTransform = _playerView.transform;
-        _coinWindows = new Vector3(_playerTransform.position.x, _playerTransform.position.y+3, _playerTransform.position.z +3);
+        _coinWindows = new Vector3(_playerTransform.position.x-3, _playerTransform.position.y+3, _playerTransform.position.z +3);
         
         GetWheatCount(_playerView.WheatCount);
         _playerView.OnNearBarn += SellWheat;

@@ -44,7 +44,7 @@ public class PlayerView : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<WheatPatchView>() != null)
+        if (other.GetComponent<SlashZone>() != null)
         {
             ShowSlash();
         }
