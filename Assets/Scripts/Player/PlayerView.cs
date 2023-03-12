@@ -45,8 +45,6 @@ public class PlayerView : MonoBehaviour
             _animator.ResetTrigger(Slash);
             _rigidbody.velocity = (new Vector3(_direction.x, 0, _direction.y) * _acceleration);
         }
-
-   
     }
 
     private void OnTriggerStay(Collider other)
@@ -58,6 +56,7 @@ public class PlayerView : MonoBehaviour
         }
         if (other.GetComponent<CoinsHandler>() && WheatCount > 0)
         {
+            Debug.Log("Unload");
             OnNearBarn?.Invoke();
             _wheatCount = 0;
         }

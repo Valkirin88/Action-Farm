@@ -23,6 +23,7 @@ public class WheatController
         _cubeView.OnCubeCollect -= CubeCollect;
         _patchView.StartGrowing();
         ShowCollectAnimation();
+        _playerView.AddWheat();
     }
 
     private void CreateCube()
@@ -37,16 +38,14 @@ public class WheatController
     {
         _cubeView.ShowCollectAnimation();
         _cubeView.OnAnimationDone += AddInBag;
-        _cubeView.OnAnimationDone += _playerView.AddWheat;
+        //_cubeView.OnAnimationDone += _playerView.AddWheat;
     }
 
     private void AddInBag()
     {
-        _cubeView.OnAnimationDone -= _playerView.AddWheat;
+       // _cubeView.OnAnimationDone -= _playerView.AddWheat;
         _cubeView.OnAnimationDone -= AddInBag;
         _wheatBag.AddInBag();
-        
-        
     }
 
     private void UnloadWheat()
