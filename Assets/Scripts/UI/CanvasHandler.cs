@@ -46,7 +46,6 @@ public class CanvasHandler : MonoBehaviour
     private void AddWheat(int wheat)
     {
         _wheat = wheat;
-        //_wheatCounterText.text = "x" + _wheat;
         ShowResources(_coins, _wheat);
     }
 
