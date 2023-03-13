@@ -83,9 +83,7 @@ public class PlayerView : MonoBehaviour
 
     private void ShowSlash()
     {
-
         _animator.SetTrigger(Slash);
-     
     }
 
     private void ShowSickle()
@@ -101,10 +99,8 @@ public class PlayerView : MonoBehaviour
 
     private void HideSickle()
     {
-   
         _sickle.SetActive(false);
         _isSlash = false;
-       
     }
 
     public void AddWheat()
@@ -112,5 +108,4 @@ public class PlayerView : MonoBehaviour
         _wheatCount++;
         OnWheatCountChanged?.Invoke(WheatCount);
     }
-
 }

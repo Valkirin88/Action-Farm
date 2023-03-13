@@ -26,7 +26,6 @@ public class CoinsHandler : MonoBehaviour
     private Vector3 _coinWindowPosition;
 
 
-
     private void Start()
     {
         GetWheatCount(_playerView.WheatCount);

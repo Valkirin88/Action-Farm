@@ -32,8 +32,6 @@ public class WheatCubeView : MonoBehaviour
         gameObject.GetComponent<Collider>().enabled = false;
         sequence = DOTween.Sequence();
         sequence.Append(gameObject.transform.DOMove(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.5f, gameObject.transform.position.z), 0.2f)).onComplete = CubeCollect;
-        //sequence.Append(gameObject.transform.DOMove(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 0.5f, gameObject.transform.position.z), 0.2f)).onComplete = CubeCollect;
-        
     }
 
     private void CubeCollect()
