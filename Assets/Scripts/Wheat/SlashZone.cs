@@ -2,15 +2,18 @@ using UnityEngine;
 
 public class SlashZone : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool _isReadyToBeCut;
+
+   
+    private WheatPatchView _wheatPatchView;
+
+    private void Start()
     {
-        
+        _wheatPatchView = GetComponentInParent<WheatPatchView>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        _isReadyToBeCut = _wheatPatchView.IsReadyToBeCut;
     }
 }

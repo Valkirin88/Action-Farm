@@ -20,7 +20,6 @@ public class WheatCubeView : MonoBehaviour
             {
 
                 _cubeCount++;
-                Debug.Log(_cubeCount);
                 OnCubeCollect?.Invoke();
                 ShowCollectAnimation();
             }

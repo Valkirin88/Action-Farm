@@ -22,13 +22,14 @@ public class WheatPatchView : MonoBehaviour
     private int _stateTimer = 2;  //seconds
     private int _growingStep = 1;
     private int _cuttingStep = 1;
-    private bool _isReadyToBeCut = true;
+    private bool _isReadyToBeCut = false;
 
     private GameObject _highPart;
     private GameObject _lowPart;
     private GameObject _cubeOnScene;
 
     public GameObject CubeOnScene  => _cubeOnScene; 
+    public bool IsReadyToBeCut => _isReadyToBeCut;
 
     private void Start()
     {

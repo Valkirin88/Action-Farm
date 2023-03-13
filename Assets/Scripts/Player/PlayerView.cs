@@ -51,12 +51,14 @@ public class PlayerView : MonoBehaviour
     {
         if (other.GetComponent<SlashZone>() != null && !_isSlash)
         {
-            _isSlash = true;
-            ShowSlash();
+            if (other.GetComponent<SlashZone>()._isReadyToBeCut)
+            {
+                _isSlash = true;
+                ShowSlash();
+            }
         }
         if (other.GetComponent<CoinsHandler>() && WheatCount > 0)
         {
-            Debug.Log("Unload");
             OnNearBarn?.Invoke();
             _wheatCount = 0;
         }
