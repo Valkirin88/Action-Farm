@@ -48,7 +48,7 @@ public class CoinsHandler : MonoBehaviour
     }
     private IEnumerator WaitSelling()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(4);
         _index = _wheatCount - 1;
         OnCoinGet?.Invoke(_wheatCount * 15);
         MoveCoins();

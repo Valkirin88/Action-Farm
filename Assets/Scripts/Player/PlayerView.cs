@@ -90,10 +90,13 @@ public class PlayerView : MonoBehaviour
 
     private void ShowSickle()
     {
+        _sickle.SetActive(true);
+    }
+
+    private void PlaySoundSlash()
+    {
         _audioSource.clip = _slashSound;
         _audioSource.Play();
-        _sickle.SetActive(true);
-        
     }
 
     private void HideSickle()

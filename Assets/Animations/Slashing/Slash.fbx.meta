@@ -91,6 +91,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.64559877
+        functionName: PlaySoundSlash
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 59ba96f72a7375140851ee194f65568c, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.8911943
         functionName: HideSickle
         data: 
