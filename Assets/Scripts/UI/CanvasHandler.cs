@@ -77,14 +77,14 @@ public class CanvasHandler : MonoBehaviour
     {
         if (_coinsOnCounter < _coins)
         {
-            _coinsWindow.transform.DOShakePosition(0.03f, 10);
+            _coinsWindow.transform.DOShakePosition(0.01f, 10);
             StartCoroutine(WaitForNextCoinCount());
         }
     }
 
     private IEnumerator WaitForNextCoinCount()
     {
-        yield return new WaitForSeconds(0.03f);
+        yield return new WaitForSeconds(0.01f);
         _coinsOnCounter++;
         ShowResources(_coinsOnCounter, 0);
         CoinsCountUp();

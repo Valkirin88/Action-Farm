@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 105785371893958158}
   - component: {fileID: 105785371892663854}
   - component: {fileID: 105785371891664110}
-  - component: {fileID: 105785371903322606}
   - component: {fileID: 1279971857632544389}
-  - component: {fileID: 8685995218354334712}
   - component: {fileID: 1298840275}
+  - component: {fileID: 1298840274}
+  - component: {fileID: 3096497333885942355}
   m_Layer: 0
   m_Name: Barn_house
   m_TagString: Untagged
@@ -86,25 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &105785371903322606
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105785371893930542}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: e36cf732b73e87f458b5e69d2c1f6417, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &1279971857632544389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -118,20 +99,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.52, y: 18.8, z: 8.2}
   m_Center: {x: 0, y: 0, z: 4.4292197}
---- !u!114 &8685995218354334712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105785371893930542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac44e660e147c4a4994c8bc726145752, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _coinPrefab: {fileID: 2185198824671128583, guid: f9bcc7e1b65e19944b7b2244499d68c4, type: 3}
-  _playerView: {fileID: 0}
 --- !u!54 &1298840275
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -148,6 +115,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1298840274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105785371893930542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e06e272738290044aba5744517a05c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3096497333885942355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105785371893930542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac44e660e147c4a4994c8bc726145752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _coinPrefab: {fileID: 2185198824671128583, guid: f9bcc7e1b65e19944b7b2244499d68c4, type: 3}
+  _playerView: {fileID: 0}
+  _coinWindow: {fileID: 0}
 --- !u!1 &8633535413902899102
 GameObject:
   m_ObjectHideFlags: 0
