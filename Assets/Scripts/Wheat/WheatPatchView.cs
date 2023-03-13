@@ -56,7 +56,7 @@ public class WheatPatchView : MonoBehaviour
 
     private IEnumerator WaitReadyToCut()
     {
-        yield return new WaitForSeconds(1);  //works as filter for multipe cut
+        yield return new WaitForSeconds(0.5f);  //works as filter for multipe cut
         _isReadyToBeCut = true;
     }
 
@@ -147,7 +147,7 @@ public class WheatPatchView : MonoBehaviour
 
     private IEnumerator WaitForCube()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         Cut(_cuttingStep = 0);
         OnAllCut?.Invoke();
     }

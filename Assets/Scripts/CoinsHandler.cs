@@ -14,13 +14,14 @@ public class CoinsHandler : MonoBehaviour
     [SerializeField]
     private Transform _coinWindow;
 
-    private float _movingTime = 5f;
+    private float _movingTime = 0.03f;
 
     
     private int _wheatCount;
     private GameObject[] _coin;
     private bool _isSelling;
     private int _index;
+
     private Vector3 _barnHousePosition;
     private Vector3 _coinWindowPosition;
 
@@ -34,9 +35,7 @@ public class CoinsHandler : MonoBehaviour
 
     private void Update()
     {
-        _barnHousePosition = Camera.main.WorldToViewportPoint(transform.position);
-        // _coinWindowPosition = _coinWindow.position;
-        _barnHousePosition.z = 0;
+        _coinWindowPosition = Camera.main.ScreenToWorldPoint(_coinWindow.position + new Vector3(0,0,5));
     }
 
     private void GetWheatCount(int wheatCount)
@@ -64,9 +63,10 @@ public class CoinsHandler : MonoBehaviour
     {
         if (_index >= 0 && _isSelling)
         {
-            _coin[_index] = Instantiate(_coinPrefab);
-            _coin[_index].transform.position = Camera.main.WorldToViewportPoint(_coin[_index].transform.position);
-            _coin[_index].transform.DOMove(_coinWindow.position, _movingTime).onComplete = DestroyCoin;
+            _coin[_index] = Instantiate(_coinPrefab, transform.position, Quaternion.identity);
+            
+            
+            _coin[_index].transform.DOMove(_coinWindowPosition, _movingTime).onComplete = DestroyCoin;
         }
         if(_index <0)
             _isSelling = false;
@@ -74,7 +74,7 @@ public class CoinsHandler : MonoBehaviour
 
     private void DestroyCoin()
     {
-       // Destroy(_coin[_index]);
+        Destroy(_coin[_index]);
         _index--;
         MoveCoins();
     }
