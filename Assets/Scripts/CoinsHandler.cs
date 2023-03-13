@@ -14,7 +14,7 @@ public class CoinsHandler : MonoBehaviour
     [SerializeField]
     private Transform _coinWindow;
 
-    private float _movingTime = 0.03f;
+    private float _movingTime = 0.1f;
 
     
     private int _wheatCount;
@@ -33,11 +33,6 @@ public class CoinsHandler : MonoBehaviour
         _playerView.OnNearBarn += SellWheat;
     }
 
-    private void Update()
-    {
-        _coinWindowPosition = Camera.main.ScreenToWorldPoint(_coinWindow.position + new Vector3(0,0,5));
-    }
-
     private void GetWheatCount(int wheatCount)
     {
         _wheatCount = wheatCount;
@@ -53,8 +48,8 @@ public class CoinsHandler : MonoBehaviour
     }
     private IEnumerator WaitSelling()
     {
-        yield return new WaitForSeconds(2);
-        _index = _wheatCount * 15 - 1;
+        yield return new WaitForSeconds(3);
+        _index = _wheatCount - 1;
         OnCoinGet?.Invoke(_wheatCount * 15);
         MoveCoins();
     }
@@ -63,6 +58,7 @@ public class CoinsHandler : MonoBehaviour
     {
         if (_index >= 0 && _isSelling)
         {
+            _coinWindowPosition = Camera.main.ScreenToWorldPoint(_coinWindow.position + new Vector3(0, 0, 5));
             _coin[_index] = Instantiate(_coinPrefab, transform.position, Quaternion.identity);
             
             

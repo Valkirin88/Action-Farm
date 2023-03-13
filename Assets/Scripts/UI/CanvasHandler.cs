@@ -71,7 +71,6 @@ public class CanvasHandler : MonoBehaviour
         StopAllCoroutines();
         _coins = _coins + coinsCount;
         CoinsCountUp();
-        Debug.Log(_coins);
     }
 
     private void CoinsCountUp()

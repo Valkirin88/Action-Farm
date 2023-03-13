@@ -11,7 +11,7 @@ public class Slicer : MonoBehaviour
     private GameObject[] _slicedObjects;
 
 
-    private void Start()
+    private void Awake()
     {
         _slicedObjects = Slice(new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z - 0.5f), new Vector3(0, 1, 0), new TextureRegion());
         SlicedKeeper.HighPart = _slicedObjects[0];

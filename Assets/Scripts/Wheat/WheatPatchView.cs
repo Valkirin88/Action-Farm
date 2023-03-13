@@ -33,6 +33,12 @@ public class WheatPatchView : MonoBehaviour
 
     private void Start()
     {
+        _highPart = Instantiate(SlicedKeeper.HighPart);
+        _lowPart = Instantiate(SlicedKeeper.LowPart);
+        _highPart.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        _lowPart.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        _highPart.SetActive(false);
+        _lowPart.SetActive(false);
         StartGrowing();
     }
 
@@ -119,17 +125,15 @@ public class WheatPatchView : MonoBehaviour
         switch(step)
         {
             case 0:
-                Destroy(_highPart);
-                Destroy(_lowPart);
+                RotateSlicedBack();
                 _cuttingStep++;
                 _isReadyToBeCut=false;
                 break;
             case 1:
                 _growingState[4].SetActive(false);
-                _highPart = Instantiate(SlicedKeeper.HighPart);
-                _lowPart = Instantiate(SlicedKeeper.LowPart);
-                _highPart.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-                _lowPart.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+
+                _highPart.SetActive(true);
+                _lowPart.SetActive(true);
                 ShowCutAnim(_highPart);
                 _cuttingStep++;
                 break;
@@ -142,12 +146,21 @@ public class WheatPatchView : MonoBehaviour
 
     private void ShowCutAnim(GameObject part)
     {
-        part.transform.DOLocalRotate(new Vector3(0,0,90), 1, RotateMode.WorldAxisAdd);
+        part.transform.DOLocalRotate(new Vector3(0,0,90),0.5f, RotateMode.WorldAxisAdd);
+    }
+
+    private void RotateSlicedBack()
+    {
+        _highPart.transform.DOLocalRotate(new Vector3(0, 0, -90), 0.1f, RotateMode.WorldAxisAdd);
+        _lowPart.transform.DOLocalRotate(new Vector3(0, 0, -90), 0.1f, RotateMode.WorldAxisAdd);
     }
 
     private IEnumerator WaitForCube()
     {
+        
         yield return new WaitForSeconds(0.5f);
+        _highPart.SetActive(false);
+        _lowPart.SetActive(false);
         Cut(_cuttingStep = 0);
         OnAllCut?.Invoke();
     }
