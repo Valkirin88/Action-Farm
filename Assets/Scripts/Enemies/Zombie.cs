@@ -19,7 +19,7 @@ public class Zombie : MonoBehaviour
     private Transform[] _patrolPoints;
 
     private GameObject _player;
-    private float _runSpeed =1f;
+    private float _runSpeed =1.5f;
     private float _walkSpeed = 1f;
     private int _quantityPoints;
     private int _nextPoint;
