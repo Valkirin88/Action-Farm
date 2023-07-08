@@ -23,8 +23,6 @@ public class Zombie : MonoBehaviour
     private float _walkSpeed = 1f;
     private int _quantityPoints;
     private int _nextPoint;
-    private bool _isWalk;
-
 
     private void Start()
     {
@@ -46,7 +44,6 @@ public class Zombie : MonoBehaviour
         if (_player != null)
         {
             float distance = Vector3.Distance(_player.transform.position, transform.position);
-            Debug.Log(distance);
             if (distance < 4)
                 FollowPlayer();
             else
