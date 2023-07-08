@@ -43,18 +43,19 @@ public class Zombie : MonoBehaviour
 
     private void Update()
     {
-        if (_player = null)
+        if (_player != null)
         {
             float distance = Vector3.Distance(_player.transform.position, transform.position);
-            if (distance < 2)
-                _agent.SetDestination(_player.transform.position);
+            Debug.Log(distance);
+            if (distance < 4)
+                FollowPlayer();
             else
             {
                 Patrol();
                 _player = null;
             }
         }
-        if (_agent.velocity.magnitude < 0.15f)
+        if (_agent.velocity.magnitude < 0.01f)
             Patrol();
             
     }
@@ -82,6 +83,7 @@ public class Zombie : MonoBehaviour
 
     private IEnumerator ShowIdle()
     {
+        _agent.speed = 0;
         _animator.SetBool("Run", false);
         _animator.SetBool("Walk", false);
         yield return new WaitForSeconds(2);
