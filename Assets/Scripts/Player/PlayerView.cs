@@ -26,6 +26,7 @@ public class PlayerView : MonoBehaviour
     private int _wheatCount;
     private bool _isIdle = true;
     private bool _isSlash = false;
+    private Vector3 _startPosition;
 
     public int WheatCount => _wheatCount;
 
@@ -35,6 +36,7 @@ public class PlayerView : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         _animator.SetBool("Idle", _isIdle);
+        _startPosition = transform.position;
     }
 
     private void FixedUpdate()
@@ -61,6 +63,10 @@ public class PlayerView : MonoBehaviour
         {
             OnNearBarn?.Invoke();
             _wheatCount = 0;
+        }
+        if(other.GetComponent<ZonbieBody>())
+        {
+            transform.position = _startPosition;
         }
     }
 
