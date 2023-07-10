@@ -67,7 +67,6 @@ public class PlayerView : MonoBehaviour
         if(other.GetComponent<ZonbieBody>())
         {
             transform.position = _startPosition;
-            _wheatCount = 0;
         }
     }
 

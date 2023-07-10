@@ -8,9 +8,6 @@ public class EntryPoint : MonoBehaviour
     [SerializeField]
     private PlayerView _playerView;
 
-    //[SerializeField]
-    //private GameObject _wheatZone;
-
     [SerializeField]
     private GameObject[] _patches;
 
