@@ -52,7 +52,7 @@ public class Zombie : MonoBehaviour
                 _player = null;
             }
         }
-        if (_agent.velocity.magnitude < 0.01f)
+        if (_agent.velocity.magnitude < 0.05f)
             Patrol();
     }
      

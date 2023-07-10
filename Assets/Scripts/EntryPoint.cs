@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 
 public class EntryPoint : MonoBehaviour
@@ -10,6 +11,9 @@ public class EntryPoint : MonoBehaviour
 
     [SerializeField]
     private GameObject[] _patches;
+
+    [SerializeField]
+    private CinemachineVirtualCamera _camera;
 
 
     [SerializeField]
@@ -27,7 +31,12 @@ public class EntryPoint : MonoBehaviour
         _wheatBag = _playerView.gameObject.GetComponentInChildren<WheatBag>();
         _inputManager = new InputManager(_touchControllerObject);
         _playerController = new PlayerController(_inputManager, _playerView, _touchController);
-       
+
+        
+        //var vcam = _camera.GetComponent<CinemachineVirtualCamera>();
+        //vcam.Follow = _playerView.gameObject.transform;
+        //vcam.LookAt = _playerView.gameObject.transform;
+
         WheatControllerInitiate();
     }
 
