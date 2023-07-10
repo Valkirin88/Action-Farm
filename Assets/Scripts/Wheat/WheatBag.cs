@@ -20,7 +20,7 @@ public class WheatBag : MonoBehaviour
 
     private void Start()
     {
-      
+        _barnHouse = FindObjectOfType<BarnHouse>().gameObject;
         _wheatCubes = GetComponentsInChildren<WheatCubeInBag>();
         
         for (int i = 0; i < _wheatCubes.Length; i++)
