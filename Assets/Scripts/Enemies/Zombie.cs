@@ -54,10 +54,8 @@ public class Zombie : MonoBehaviour
         }
         if (_agent.velocity.magnitude < 0.01f)
             Patrol();
-            
     }
-
- 
+     
     private void FollowPlayer()
     {
         _animator.SetBool("Run", true);

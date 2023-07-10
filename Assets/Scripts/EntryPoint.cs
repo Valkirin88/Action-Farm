@@ -22,7 +22,7 @@ public class EntryPoint : MonoBehaviour
     private WheatBag _wheatBag;
 
 
-    void Awake()
+    void Initiate()
     {
         _wheatBag = _playerView.gameObject.GetComponentInChildren<WheatBag>();
         _inputManager = new InputManager(_touchControllerObject);
@@ -33,6 +33,11 @@ public class EntryPoint : MonoBehaviour
 
     void Update()
     {
+        if ( _playerView == null)
+            _playerView = FindObjectOfType<PlayerView>();
+        else if( _playerView != null && _playerController == null )
+            Initiate();
+        if(_inputManager != null)
         _inputManager.Update();
     }
 

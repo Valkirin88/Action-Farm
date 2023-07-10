@@ -26,10 +26,17 @@ public class CoinsHandler : MonoBehaviour
     private Vector3 _coinWindowPosition;
 
 
-    private void Start()
+    private void Initiate()
     {
         GetWheatCount(_playerView.WheatCount);
         _playerView.OnNearBarn += SellWheat;
+    }
+    private void Update()
+    {
+        if (_playerView == null)
+            _playerView = FindObjectOfType<PlayerView>();
+        else
+            Initiate();
     }
 
     private void GetWheatCount(int wheatCount)

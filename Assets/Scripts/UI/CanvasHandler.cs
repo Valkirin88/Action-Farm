@@ -29,13 +29,20 @@ public class CanvasHandler : MonoBehaviour
 
     private int _coinsOnCounter;
 
-    private void Start()
+    private void Initiate()
     {
         _playerView.OnWheatCountChanged += AddWheat;
         _playerView.OnNearBarn += WheatCountdown;
         _coinsHandler.OnCoinGet += CoinsCountStart;
         ShowCoins(_coins);
         ShowWheat(_wheat);
+    }
+    private void Update()
+    {
+        if (_playerView == null)
+            _playerView = FindObjectOfType<PlayerView>();
+        else
+            Initiate();
     }
 
     private void ShowCoins(int coins)
