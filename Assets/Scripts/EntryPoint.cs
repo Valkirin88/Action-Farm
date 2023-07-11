@@ -1,6 +1,7 @@
 using Cinemachine;
 using UnityEngine;
 
+
 public class EntryPoint : MonoBehaviour
 {
     [SerializeField]
@@ -32,16 +33,19 @@ public class EntryPoint : MonoBehaviour
         _inputManager = new InputManager(_touchControllerObject);
         _playerController = new PlayerController(_inputManager, _playerView, _touchController);
 
-        
-        //var vcam = _camera.GetComponent<CinemachineVirtualCamera>();
-        //vcam.Follow = _playerView.gameObject.transform;
-        //vcam.LookAt = _playerView.gameObject.transform;
+
+        var vcam = _camera.GetComponent<CinemachineVirtualCamera>();
+        vcam.Follow = _playerView.gameObject.transform;
+        vcam.LookAt = _playerView.gameObject.transform;
 
         WheatControllerInitiate();
     }
 
+
+
     void Update()
     {
+        base.Update();
         if ( _playerView == null)
             _playerView = FindObjectOfType<PlayerView>();
         else if( _playerView != null && _playerController == null )

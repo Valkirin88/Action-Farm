@@ -36,6 +36,7 @@ public class PlayerView : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         _animator.SetBool("Idle", _isIdle);
+        transform.eulerAngles = new Vector3(0,270,0);
         _startPosition = transform.position;
     }
 
