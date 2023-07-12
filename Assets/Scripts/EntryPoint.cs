@@ -45,13 +45,12 @@ public class EntryPoint : MonoBehaviour
 
     void Update()
     {
-        base.Update();
-        if ( _playerView == null)
+        if (_playerView == null)
             _playerView = FindObjectOfType<PlayerView>();
-        else if( _playerView != null && _playerController == null )
+        else if (_playerView != null && _playerController == null)
             Initiate();
-        if(_inputManager != null)
-        _inputManager.Update();
+        if (_inputManager != null)
+            _inputManager.Update();
     }
 
     private void OnDestroy()

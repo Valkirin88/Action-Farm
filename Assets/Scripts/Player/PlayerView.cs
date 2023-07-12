@@ -60,12 +60,15 @@ public class PlayerView : MonoBehaviour
                 ShowSlash();
             }
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
         if (other.GetComponent<BarnHouse>() && WheatCount > 0)
         {
             OnNearBarn?.Invoke();
             _wheatCount = 0;
         }
-        if(other.GetComponent<ZonbieBody>())
+        if (other.GetComponent<ZonbieBody>())
         {
             transform.position = _startPosition;
         }

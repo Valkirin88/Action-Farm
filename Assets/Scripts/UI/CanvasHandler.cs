@@ -28,6 +28,7 @@ public class CanvasHandler : MonoBehaviour
     private float _countdownTime = 0.01f;
 
     private int _coinsOnCounter;
+    private bool _isInitiated;
 
     private void Initiate()
     {
@@ -36,12 +37,13 @@ public class CanvasHandler : MonoBehaviour
         _coinsHandler.OnCoinGet += CoinsCountStart;
         ShowCoins(_coins);
         ShowWheat(_wheat);
+        _isInitiated = true;
     }
     private void Update()
     {
         if (_playerView == null)
             _playerView = FindObjectOfType<PlayerView>();
-        else
+        else if (_playerView != null && !_isInitiated)
             Initiate();
     }
 
