@@ -1,20 +1,102 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using PlayFab;
+using PlayFab.ClientModels;
+using System;
+using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField]
     private Button _startGameButton;
+    [SerializeField]
+    private Button _openLoginScreenButton;
+    [SerializeField]
+    private Button _loginButton;
+    [SerializeField]
+    private Button _registerButton;
+    [SerializeField]
+    private Button _backButton;
+
+    [SerializeField]
+    private TMP_Text _messageText;
+    [SerializeField]
+    private TMP_InputField _emailInput;
+    [SerializeField]
+    private TMP_InputField _passwordInput;
+
+    [SerializeField]
+    private GameObject _mainScreen;
+    [SerializeField]
+    private GameObject _loginScreen;
 
     private void Start()
     {
         _startGameButton.onClick.AddListener(StartGame);
+        _loginButton.onClick.AddListener(Login);
+        _registerButton.onClick.AddListener(Register);
+        _openLoginScreenButton.onClick.AddListener(OpenLoginScreen);
+        _backButton.onClick.AddListener(OpenMainScreen);
+    }
+
+    private void OpenLoginScreen()
+    {
+        _loginScreen.SetActive(true);
+        _mainScreen.SetActive(false);
+    }
+
+    private void OpenMainScreen()
+    {
+        _loginScreen.SetActive(false);
+        _mainScreen.SetActive(true);
     }
 
     private void StartGame()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void Register()
+    {
+        var request = new RegisterPlayFabUserRequest
+        {
+            Email = _emailInput.text,
+            Password = _passwordInput.text,
+            RequireBothUsernameAndEmail = false
+        };
+        PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnError);
+    }
+
+    private void OnError(PlayFabError error)
+    {
+        _messageText.text = error.ErrorMessage;
+    }
+
+    private void OnRegisterSuccess(RegisterPlayFabUserResult result)
+    {
+        _messageText.text = "Registered and logged in";
+    }
+
+    public void Login()
+    {
+        var request = new LoginWithEmailAddressRequest
+        {
+            Email = _emailInput.text,
+            Password = _passwordInput.text
+        };
+        PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnError);
+    }
+
+    private void OnLoginSuccess(LoginResult message)
+    {
+        _messageText.text = "Login success";
+    }
+
+    private void OnDestroy()
+    {
+        _startGameButton.onClick.RemoveListener(StartGame);
+        _loginButton.onClick.RemoveListener(Login);
+        _registerButton.onClick.RemoveListener(Register);
     }
 }
