@@ -1,17 +1,17 @@
-
 using PlayFab.ClientModels;
 using PlayFab;
 using System.Collections.Generic;
-using UnityEditor.PackageManager;
-using System;
+
+using UnityEngine;
 
 public static class DataKeeper 
 {
     public static int Coins;
 
-    private static void SaveCoins(int coins)
+    public static void SaveCoins(int coins)
     {
-        Coins = coins;
+        Debug.Log(Coins.ToString());
+        Coins = Coins + coins;
         var request = new UpdateUserDataRequest
         {
             Data = new Dictionary<string, string>

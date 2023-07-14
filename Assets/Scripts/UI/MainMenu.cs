@@ -44,6 +44,8 @@ public class MainMenu : MonoBehaviour
         _registerButton.onClick.AddListener(Register);
         _openLoginScreenButton.onClick.AddListener(OpenLoginScreen);
         _backButton.onClick.AddListener(OpenMainScreen);
+
+        _coinsText.text = $"Coins: {DataKeeper.Coins}";
     }
 
     private void OpenLoginScreen()
@@ -111,6 +113,7 @@ public class MainMenu : MonoBehaviour
         if (result.Data != null && result.Data.ContainsKey("Coins"))
         {
             _coinsText.text = $"Coins:{result.Data["Coins"].Value}";
+            DataKeeper.SaveCoins(int.Parse(result.Data["Coins"].Value));
         }
         else
             _coinsText.text = "Coins: 0";

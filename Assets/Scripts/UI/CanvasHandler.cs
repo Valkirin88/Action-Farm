@@ -41,6 +41,7 @@ public class CanvasHandler : MonoBehaviour
 
     private int _coinsOnCounter;
     private bool _isInitiated;
+    private bool _isWin;
 
     private void Initiate()
     {
@@ -57,31 +58,32 @@ public class CanvasHandler : MonoBehaviour
             _playerView = FindObjectOfType<PlayerView>();
         else if (_playerView != null && !_isInitiated)
             Initiate();
-
-        if (_coinsOnCounter >= 60)
+        if (_coinsOnCounter > 60 && !_isWin)
             ShowWin();
+       
     }
 
     private void ShowWin()
     {
+        _isWin = true;
         _winScreen.SetActive(true);
         _joystick.SetActive(false);
-        Time.timeScale = 0;
         _restartButton.onClick.AddListener(Restart);
         _mainMenuButton.onClick.AddListener(ShowMainMenu);
 
-        DataKeeper.Coins += _coinsOnCounter;
+        
     }
 
     private void ShowMainMenu()
     {
-        Time.timeScale = 1;
+        DataKeeper.SaveCoins(_coinsOnCounter);
+        Debug.Log("Save");
         SceneManager.LoadScene(0);
     }
 
     private void Restart()
     {
-        Time.timeScale = 1;
+
         SceneManager.LoadScene(1);
     }
 
