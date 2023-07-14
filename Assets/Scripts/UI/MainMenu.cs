@@ -5,9 +5,12 @@ using PlayFab;
 using PlayFab.ClientModels;
 using System;
 using TMPro;
+using System.Collections.Generic;
 
 public class MainMenu : MonoBehaviour
 {
+    public int Coins;
+
     [SerializeField]
     private Button _startGameButton;
     [SerializeField]
@@ -21,6 +24,9 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField]
     private TMP_Text _messageText;
+    [SerializeField]
+    private TMP_Text _coinsText;
+
     [SerializeField]
     private TMP_InputField _emailInput;
     [SerializeField]
@@ -50,6 +56,7 @@ public class MainMenu : MonoBehaviour
     {
         _loginScreen.SetActive(false);
         _mainScreen.SetActive(true);
+        UpdateCoins();
     }
 
     private void StartGame()
@@ -91,6 +98,39 @@ public class MainMenu : MonoBehaviour
     private void OnLoginSuccess(LoginResult message)
     {
         _messageText.text = "Login success";
+        UpdateCoins();
+    }
+
+    private void UpdateCoins()
+    {
+        PlayFabClientAPI.GetUserData(new GetUserDataRequest(), OnDataReceived, OnError);
+    }
+
+    private void OnDataReceived(GetUserDataResult result)
+    {
+        if (result.Data != null && result.Data.ContainsKey("Coins"))
+        {
+            _coinsText.text = $"Coins:{result.Data["Coins"].Value}";
+        }
+        else
+            Debug.Log("Data not complete");
+    }
+
+    private void SaveCoins()
+    {
+        var request = new UpdateUserDataRequest
+        {
+            Data = new Dictionary<string, string>
+            {
+            { "Coins", Coins }
+            }
+        };
+        PlayFabClientAPI.UpdateUserData(request, OnDataSend, OnError);
+    }
+
+    private void OnDataSend(UpdateUserDataResult result)
+    {
+        
     }
 
     private void OnDestroy()
@@ -98,5 +138,7 @@ public class MainMenu : MonoBehaviour
         _startGameButton.onClick.RemoveListener(StartGame);
         _loginButton.onClick.RemoveListener(Login);
         _registerButton.onClick.RemoveListener(Register);
+        _openLoginScreenButton.onClick.RemoveListener(OpenLoginScreen);
+        _backButton.onClick.RemoveListener(OpenMainScreen);
     }
 }
