@@ -159,7 +159,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 1298840281}
+  m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 50
@@ -186,7 +186,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43319704}
-  m_LocalRotation: {x: 0.3777, y: -0.28348666, z: 0.1226653, w: 0.8728868}
+  m_LocalRotation: {x: 0.42585126, y: -0.000000021118781, z: 0.000000009939796, w: 0.9047932}
   m_LocalPosition: {x: -5.1199994, y: 7.2730002, z: -12.619999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1397,7 +1397,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.3777, y: -0.28348666, z: 0.1226653, w: 0.8728868}
+  m_LocalRotation: {x: 0.42585126, y: -0.000000021118781, z: 0.000000009939796, w: 0.9047932}
   m_LocalPosition: {x: -5.1199994, y: 7.2730002, z: -12.619999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1617,11 +1617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac44e660e147c4a4994c8bc726145752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1298840281 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 105785371893958158, guid: 23f5239f91759334084d434ad0d0eefe, type: 3}
-  m_PrefabInstance: {fileID: 105785372918751458}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1307273121 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5937682133458926870, guid: 3a0d398e250108544a75c1ab6ebe56ad, type: 3}
@@ -2201,26 +2196,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 607840614, guid: 14ea91c85b92813429242fc1f1f40ce2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1930788325, guid: 14ea91c85b92813429242fc1f1f40ce2, type: 3}
-      propertyPath: m_Colors.m_PressedColor.b
-      value: 0.10247413
-      objectReference: {fileID: 0}
-    - target: {fileID: 1930788325, guid: 14ea91c85b92813429242fc1f1f40ce2, type: 3}
-      propertyPath: m_Colors.m_PressedColor.g
-      value: 0.10247413
-      objectReference: {fileID: 0}
-    - target: {fileID: 1930788325, guid: 14ea91c85b92813429242fc1f1f40ce2, type: 3}
-      propertyPath: m_Colors.m_PressedColor.r
-      value: 0.9528302
-      objectReference: {fileID: 0}
-    - target: {fileID: 2142491440830444352, guid: 14ea91c85b92813429242fc1f1f40ce2, type: 3}
-      propertyPath: _joystick
-      value: 
-      objectReference: {fileID: 1366044839}
     - target: {fileID: 2142491440830444352, guid: 14ea91c85b92813429242fc1f1f40ce2, type: 3}
       propertyPath: _coinsHandler
       value: 

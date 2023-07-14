@@ -113,16 +113,17 @@ public class MainMenu : MonoBehaviour
             _coinsText.text = $"Coins:{result.Data["Coins"].Value}";
         }
         else
-            Debug.Log("Data not complete");
+            _coinsText.text = "Coins: 0";
     }
 
     private void SaveCoins()
     {
+        
         var request = new UpdateUserDataRequest
         {
             Data = new Dictionary<string, string>
             {
-            { "Coins", Coins }
+            { "Coins", Coins.ToString() }
             }
         };
         PlayFabClientAPI.UpdateUserData(request, OnDataSend, OnError);

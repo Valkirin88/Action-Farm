@@ -2,6 +2,9 @@ using TMPro;
 using UnityEngine;
 using DG.Tweening;
 using System.Collections;
+using System;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CanvasHandler : MonoBehaviour
 {
@@ -9,6 +12,8 @@ public class CanvasHandler : MonoBehaviour
     private GameObject _wheatWindow;
     [SerializeField]
     private GameObject _coinsWindow;
+    [SerializeField]
+    private GameObject _joystick;
 
     [SerializeField]
     private TextMeshProUGUI _coinsCounterText;
@@ -26,6 +31,13 @@ public class CanvasHandler : MonoBehaviour
     private CoinsHandler _coinsHandler;
     [SerializeField]
     private float _countdownTime = 0.01f;
+    
+    [SerializeField]
+    private GameObject _winScreen;
+    [SerializeField]
+    private Button _restartButton;
+    [SerializeField]
+    private Button _mainMenuButton;
 
     private int _coinsOnCounter;
     private bool _isInitiated;
@@ -45,6 +57,32 @@ public class CanvasHandler : MonoBehaviour
             _playerView = FindObjectOfType<PlayerView>();
         else if (_playerView != null && !_isInitiated)
             Initiate();
+
+        if (_coinsOnCounter >= 60)
+            ShowWin();
+    }
+
+    private void ShowWin()
+    {
+        _winScreen.SetActive(true);
+        _joystick.SetActive(false);
+        Time.timeScale = 0;
+        _restartButton.onClick.AddListener(Restart);
+        _mainMenuButton.onClick.AddListener(ShowMainMenu);
+
+        DataKeeper.Coins += _coinsOnCounter;
+    }
+
+    private void ShowMainMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
+    }
+
+    private void Restart()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(1);
     }
 
     private void ShowCoins(int coins)
@@ -105,5 +143,14 @@ public class CanvasHandler : MonoBehaviour
             _coinsOnCounter = _coins;
         ShowCoins(_coinsOnCounter);
         CoinsCountUp();
+    }
+
+    private void OnDestroy()
+    {
+        _playerView.OnWheatCountChanged -= AddWheat;
+        _playerView.OnNearBarn -= WheatCountdown;
+        _coinsHandler.OnCoinGet -= CoinsCountStart;
+        _restartButton.onClick.RemoveListener(Restart);
+        _mainMenuButton.onClick.RemoveListener(ShowMainMenu);
     }
 }
